@@ -1,0 +1,1 @@
+export const kakaoMapAPIkey='12c79a98c9c072d00e7e5a8f2b322dee';
