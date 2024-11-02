@@ -1,10 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { kakaoMapAPIkey } from './APIKey';
 
-const KakaoMap = ({ circleOptions, polylineOptions }) => {
-  const mapContainer = useRef(null);  // 지도 DOM을 참조합니다.
-  const mapInstance = useRef(null);   // 지도 객체를 참조합니다.
-  const [mapLoaded, setMapLoaded] = useState(false);  // 지도 로드 상태 관리
+const KakaoMap = () => {
+  const mapContainer = useRef(null); 
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -12,43 +10,52 @@ const KakaoMap = ({ circleOptions, polylineOptions }) => {
     script.async = true;
 
     script.onload = () => {
-      window.kakao.maps.load(() => {
-        const center = new window.kakao.maps.LatLng(37.5822, 127.0109); // 초기 중심
-        const options = { center, level: 3 }; 
-        mapInstance.current = new window.kakao.maps.Map(mapContainer.current, options);
-        setMapLoaded(true);
+      window.kakao.maps.load(async () => {
+        const center = new window.kakao.maps.LatLng(37.5822, 127.0109); // 학교 좌표
+        const mapOption = {
+          center: center, 
+          level: 3, 
+        };
+
+        const map = new window.kakao.maps.Map(mapContainer.current, mapOption);
+        map.setMaxLevel(3); // 지도의 최대 확대 수준 설정 --> 너무 많이 축소되면 프로젝트 컨셉상 이상할듯
+
+        // 텍스트 파일에서 데이터를 읽어오는 함수
+        const fetchPolygonData = async () => {
+          try {
+            const response = await fetch('/polygonsData.txt'); // txt 파일은 반드시 public 안에
+            const text = await response.text();
+            return JSON.parse(text);
+          } catch (error) {
+            console.error('Error loading polygon data:', error);
+            return [];
+          }
+        };
+
+        const polygonData = await fetchPolygonData();
+
+        polygonData.forEach((polygon) => {
+          const path = polygon.coordinates.map(
+            (coord) => new window.kakao.maps.LatLng(coord.lat, coord.lng)
+          );
+
+          new window.kakao.maps.Polygon({
+            map: map,
+            path: path, // 좌표 
+            strokeWeight: polygon.strokeWeight, // 선 두께
+            strokeColor: polygon.strokeColor, // 선 색
+            strokeOpacity: polygon.strokeOpacity, // 선 투명도
+            fillColor: polygon.fillColor , // 내부 색
+            fillOpacity: polygon.fillOpacity, // 내부 투명도
+          });
+        });
       });
     };
 
     document.head.appendChild(script);
   }, []);
 
-  // 원 생성 함수
-  const createCircle = (options) => {
-    const circle = new window.kakao.maps.Circle(options);
-    circle.setMap(mapInstance.current); // 지도에 원 표시
-    return circle;
-  };
-
-  // 선 생성 함수
-  const createPolyline = (options) => {
-    const polyline = new window.kakao.maps.Polyline(options);
-    polyline.setMap(mapInstance.current); // 지도에 선 표시
-    return polyline;
-  };
-
-  useEffect(() => {
-    if (mapLoaded) {
-      const circle = createCircle(circleOptions);
-      const polyline = createPolyline(polylineOptions);
-
-      return () => {
-        circle.setMap(null);
-        polyline.setMap(null);
-      };
-    }
-  }, [circleOptions, polylineOptions, mapLoaded]);
-  return <div ref={mapContainer} style={{ width: '600px', height: '500px' }} />;
+  return <div ref={mapContainer} style={{ width: '100%', height: '500px' }} />;
 };
 
 export default KakaoMap;
