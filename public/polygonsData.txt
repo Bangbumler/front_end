@@ -1,0 +1,41 @@
+[
+  {
+    "coordinates": [
+      { "lat": 37.5825, "lng": 127.0100 },
+      { "lat": 37.5820, "lng": 127.0115 },
+      { "lat": 37.5815, "lng": 127.0108 }
+    ],
+    "strokeWeight": 2,
+    "strokeColor": "#004c80",
+    "strokeOpacity": 0.001,
+    "fillColor": "#005bbf",
+    "fillOpacity": 0.6
+  },
+  {
+    "coordinates": [
+      { "lat": 37.5830, "lng": 127.0120 },
+      { "lat": 37.5828, "lng": 127.0132 },
+      { "lat": 37.5819, "lng": 127.0130 },
+      { "lat": 37.5817, "lng": 127.0118 }
+    ],
+    "strokeWeight": 3,
+    "strokeColor": "#ff0000",
+    "strokeOpacity": 0.1,
+    "fillColor": "#ff8080",
+    "fillOpacity": 0.1
+  },
+  {
+    "coordinates": [
+      { "lat": 37.5840, "lng": 127.0090 },
+      { "lat": 37.5835, "lng": 127.0105 },
+      { "lat": 37.5828, "lng": 127.0098 },
+      { "lat": 37.5832, "lng": 127.0085 },
+      { "lat": 37.5840, "lng": 127.0090 }
+    ],
+    "strokeWeight": 4,
+    "strokeColor": "#00bfff",
+    "strokeOpacity": 0.9,
+    "fillColor": "#87ceeb",
+    "fillOpacity": 0.4
+  }
+]

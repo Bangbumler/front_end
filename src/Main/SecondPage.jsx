@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-
+import { useNavigate } from 'react-router';
 import communityImg from '../assets/images/community.png';
 import roomFilterImg from '../assets/images/room_filter.png';
 
@@ -89,6 +89,12 @@ const MiniTitle = styled.div`
     margin-bottom: 30px;
 `;
 const SecondPage = () => {
+    const navigate = useNavigate();
+
+    const handleRoomPageButton = () => {
+        navigate('/map'); 
+    };
+
     return (
         <PageContainer>
             <Helmet>
@@ -110,7 +116,7 @@ const SecondPage = () => {
                         지하철, 편의점, 병원, 치안시설 인프라 필터와 지역 안전도를 통해<br></br>
                         필요한 정보를 한눈에 파악할 수 있습니다.
                     </CardDescription>
-                    <CardButton>방 보러 가기 ➜</CardButton>
+                    <CardButton onClick={handleRoomPageButton}>방 보러 가기 ➜</CardButton>
                     <Image src={roomFilterImg}/>
                 </Card>
                 <Card>
