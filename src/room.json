@@ -1,0 +1,902 @@
+[
+    {
+        "id": 1,
+        "name": "행복빌라",
+        "type": "원룸",
+        "address": "서울특별시 성북구 삼선동4가 39-50",
+        "coordinate": "",
+        "floor": "1층",
+        "price": 2500000,
+        "size": "6평",
+        "cctv": 8,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/1-1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "그린아트빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 정릉3동 21-26",
+        "coordinate": "",
+        "floor": "1층",
+        "price": 5000000,
+        "size": "9평",
+        "cctv": 1,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/2-1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "리움오피스텔",
+        "type": "원룸",
+        "address": "서울특별시 성북구 정릉2동 13-42",
+        "coordinate": "",
+        "floor": "2층",
+        "price": 1000000,
+        "size": "15평",
+        "cctv": 3,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/3-1.jpg"
+    },
+    {
+        "id": 4,
+        "name": "해피하우스",
+        "type": "원룸",
+        "address": "서울특별시 성북구 성북동 1-53",
+        "coordinate": "",
+        "floor": "2층",
+        "price": 10000000,
+        "size": "10평",
+        "cctv": 6,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/4-1.jpg"
+    },
+    {
+        "id": 5,
+        "name": "드림빌리지",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동선동3가 37-49",
+        "coordinate": "",
+        "floor": "3층",
+        "price": 6500000,
+        "size": "7평",
+        "cctv": 2,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/5-1.jpg"
+    },
+    {
+        "id": 6,
+        "name": "미소빌라",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동선동5가 26-10",
+        "coordinate": "",
+        "floor": "4층",
+        "price": 3500000,
+        "size": "8평",
+        "cctv": 4,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/6-1.jpg"
+    },
+    {
+        "id": 7,
+        "name": "스마트오피스텔",
+        "type": "원룸",
+        "address": "서울특별시 성북구 삼선동3가 5-96",
+        "coordinate": "",
+        "floor": "7층",
+        "price": 9500000,
+        "size": "17평",
+        "cctv": 9,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/7-1.jpg"
+    },
+    {
+        "id": 8,
+        "name": "엘리트빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 정릉2동 14-88",
+        "coordinate": "",
+        "floor": "5층",
+        "price": 6000000,
+        "size": "11평",
+        "cctv": 5,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/8-1.jpg"
+    },
+    {
+        "id": 9,
+        "name": "코지하우스",
+        "type": "원룸",
+        "address": "서울특별시 성북구 보문동3가 3-22",
+        "coordinate": "",
+        "floor": "6층",
+        "price": 9000000,
+        "size": "7평",
+        "cctv": 7,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/9-1.jpg"
+    },
+    {
+        "id": 10,
+        "name": "플랜아트빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 길음동 27-25",
+        "coordinate": "",
+        "floor": "8층",
+        "price": 7500000,
+        "size": "12평",
+        "cctv": 10,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/10-1.jpg"
+    },
+    {
+        "id": 11,
+        "name": "퍼스트빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 보문동6가 12-82",
+        "coordinate": "",
+        "floor": "4층",
+        "price": 3500000,
+        "size": "8평",
+        "cctv": 1,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/11-1.jpg"
+    },
+    {
+        "id": 12,
+        "name": "루나오피스텔",
+        "type": "원룸",
+        "address": "서울특별시 성북구 보문동 39-88",
+        "coordinate": "",
+        "floor": "5층",
+        "price": 1500000,
+        "size": "6평",
+        "cctv": 6,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/12-1.jpg"
+    },
+    {
+        "id": 13,
+        "name": "모던빌라",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동선동2가 50-84",
+        "coordinate": "",
+        "floor": "반지하",
+        "price": 2000000,
+        "size": "13평",
+        "cctv": 4,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/13-1.jpg"
+    },
+    {
+        "id": 14,
+        "name": "이지스테이",
+        "type": "원룸",
+        "address": "서울특별시 성북구 삼선동5가 43-9",
+        "coordinate": "",
+        "floor": "1층",
+        "price": 4500000,
+        "size": "19평",
+        "cctv": 5,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/14-1.jpg"
+    },
+    {
+        "id": 15,
+        "name": "피오레빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 종암동 18-74",
+        "coordinate": "",
+        "floor": "지하1층",
+        "price": 6000000,
+        "size": "15평",
+        "cctv": 10,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": false,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/15-1.jpg"
+    },
+    {
+        "id": 16,
+        "name": "온빌리지",
+        "type": "원룸",
+        "address": "서울특별시 성북구 안암동 10-59",
+        "coordinate": "",
+        "floor": "1층",
+        "price": 8000000,
+        "size": "9평",
+        "cctv": 8,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/16-1.jpg"
+    },
+    {
+        "id": 17,
+        "name": "트렌드아트빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 정릉동 22-42",
+        "coordinate": "",
+        "floor": "6층",
+        "price": 2500000,
+        "size": "18평",
+        "cctv": 3,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/17-1.jpg"
+    },
+    {
+        "id": 18,
+        "name": "스위트빌라",
+        "type": "원룸",
+        "address": "서울특별시 성북구 안암동3가 29-3",
+        "coordinate": "",
+        "floor": "2층",
+        "price": 7000000,
+        "size": "14평",
+        "cctv": 2,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/18-1.jpg"
+    },
+    {
+        "id": 19,
+        "name": "에버하우스",
+        "type": "원룸",
+        "address": "서울특별시 성북구 삼선동1가 8-95",
+        "coordinate": "",
+        "floor": "지하1층",
+        "price": 5000000,
+        "size": "12평",
+        "cctv": 9,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/19-1.jpg"
+    },
+    {
+        "id": 20,
+        "name": "리빙오피스텔",
+        "type": "원룸",
+        "address": "서울특별시 성북구 월곡1동 44-29",
+        "coordinate": "",
+        "floor": "2층",
+        "price": 3000000,
+        "size": "17평",
+        "cctv": 7,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/20-1.jpg"
+    },
+    {
+        "id": 21,
+        "name": "라이트빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동소문동3가 24-29",
+        "coordinate": "",
+        "floor": "4층",
+        "price": 4000000,
+        "size": "10평",
+        "cctv": 2,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/21-1.jpg"
+    },
+    {
+        "id": 22,
+        "name": "블룸스테이",
+        "type": "원룸",
+        "address": "서울특별시 성북구 상월곡동 10-2",
+        "coordinate": "",
+        "floor": "3층",
+        "price": 3000000,
+        "size": "16평",
+        "cctv": 4,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/22-1.jpg"
+    },
+    {
+        "id": 23,
+        "name": "어반빌리지",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동선동4가 35-4",
+        "coordinate": "",
+        "floor": "1층",
+        "price": 9500000,
+        "size": "15평",
+        "cctv": 7,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/23-1.jpg"
+    },
+    {
+        "id": 24,
+        "name": "큐브아트빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 하월곡동 29-60",
+        "coordinate": "",
+        "floor": "5층",
+        "price": 7500000,
+        "size": "16평",
+        "cctv": 8,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/24-1.jpg"
+    },
+    {
+        "id": 25,
+        "name": "화이트빌라",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동선동 8-21",
+        "coordinate": "",
+        "floor": "지하1층",
+        "price": 5500000,
+        "size": "17평",
+        "cctv": 5,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/25-1.jpg"
+    },
+    {
+        "id": 26,
+        "name": "포레스트하우스",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동선동4가 15-20",
+        "coordinate": "",
+        "floor": "반지하",
+        "price": 6500000,
+        "size": "11평",
+        "cctv": 8,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/26-1.jpg"
+    },
+    {
+        "id": 27,
+        "name": "유니크빌라",
+        "type": "원룸",
+        "address": "서울특별시 성북구 안암동3가 35-27",
+        "coordinate": "",
+        "floor": "1층",
+        "price": 1000000,
+        "size": "14평",
+        "cctv": 9,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/27-1.jpg"
+    },
+    {
+        "id": 28,
+        "name": "로얄하우스",
+        "type": "원룸",
+        "address": "서울특별시 성북구 삼선동5가 27-8",
+        "coordinate": "",
+        "floor": "3층",
+        "price": 4500000,
+        "size": "18평",
+        "cctv": 6,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/28-1.jpg"
+    },
+    {
+        "id": 29,
+        "name": "스마일빌리지",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동소문동6가 39-90",
+        "coordinate": "",
+        "floor": "5층",
+        "price": 8000000,
+        "size": "15평",
+        "cctv": 10,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/29-1.jpg"
+    },
+    {
+        "id": 30,
+        "name": "스프링빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 보문동5가 38-63",
+        "coordinate": "",
+        "floor": "4층",
+        "price": 7000000,
+        "size": "13평",
+        "cctv": 1,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/30-1.jpg"
+    },
+    {
+        "id": 31,
+        "name": "웰하우스",
+        "type": "원룸",
+        "address": "서울특별시 성북구 보문동4가 1-22",
+        "coordinate": "",
+        "floor": "2층",
+        "price": 5500000,
+        "size": "12평",
+        "cctv": 3,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/31-1.jpg"
+    },
+    {
+        "id": 32,
+        "name": "리틀아트빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동소문동5가 35-77",
+        "coordinate": "",
+        "floor": "지하1층",
+        "price": 3000000,
+        "size": "19평",
+        "cctv": 4,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/32-1.jpg"
+    },
+    {
+        "id": 33,
+        "name": "드림빌라",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동선동2가 32-97",
+        "coordinate": "",
+        "floor": "반지하",
+        "price": 7000000,
+        "size": "12평",
+        "cctv": 5,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": false,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/33-1.jpg"
+    },
+    {
+        "id": 34,
+        "name": "마이오피스텔",
+        "type": "원룸",
+        "address": "서울특별시 성북구 종암동 9-6",
+        "coordinate": "",
+        "floor": "5층",
+        "price": 3500000,
+        "size": "13평",
+        "cctv": 9,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/34-1.jpg"
+    },
+    {
+        "id": 35,
+        "name": "카멜스테이",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동소문동7가 42-69",
+        "coordinate": "",
+        "floor": "2층",
+        "price": 1500000,
+        "size": "15평",
+        "cctv": 10,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/35-1.jpg"
+    },
+    {
+        "id": 36,
+        "name": "타운빌리지",
+        "type": "원룸",
+        "address": "서울특별시 성북구 안암동4가 41-15",
+        "coordinate": "",
+        "floor": "지하1층",
+        "price": 6000000,
+        "size": "11평",
+        "cctv": 3,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/36-1.jpg"
+    },
+    {
+        "id": 37,
+        "name": "스테이빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동소문동2가 28-95",
+        "coordinate": "",
+        "floor": "3층",
+        "price": 2000000,
+        "size": "15평",
+        "cctv": 2,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/37-1.jpg"
+    },
+    {
+        "id": 38,
+        "name": "브리즈하우스",
+        "type": "원룸",
+        "address": "서울특별시 성북구 정릉3동 47-32",
+        "coordinate": "",
+        "floor": "4층",
+        "price": 10000000,
+        "size": "14평",
+        "cctv": 7,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/38-1.jpg"
+    },
+    {
+        "id": 39,
+        "name": "하모니빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 삼선동5가 32-89",
+        "coordinate": "",
+        "floor": "반지하",
+        "price": 9000000,
+        "size": "10평",
+        "cctv": 8,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/39-1.jpg"
+    },
+    {
+        "id": 40,
+        "name": "젠하우스",
+        "type": "원룸",
+        "address": "서울특별시 성북구 돈암동 49-97",
+        "coordinate": "",
+        "floor": "1층",
+        "price": 8500000,
+        "size": "15평",
+        "cctv": 6,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/40-1.jpg"
+    },
+    {
+        "id": 41,
+        "name": "모먼트빌리지",
+        "type": "원룸",
+        "address": "서울특별시 성북구 보문동6가 37-69",
+        "coordinate": "",
+        "floor": "4층",
+        "price": 6500000,
+        "size": "9평",
+        "cctv": 1,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/41-1.jpg"
+    },
+    {
+        "id": 42,
+        "name": "하우스빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 장위1동 14-27",
+        "coordinate": "",
+        "floor": "지하1층",
+        "price": 8500000,
+        "size": "19평",
+        "cctv": 3,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/42-1.jpg"
+    },
+    {
+        "id": 43,
+        "name": "스카이오피스텔",
+        "type": "원룸",
+        "address": "서울특별시 성북구 동선동1가 5-77",
+        "coordinate": "",
+        "floor": "2층",
+        "price": 4000000,
+        "size": "16평",
+        "cctv": 10,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/43-1.jpg"
+    },
+    {
+        "id": 44,
+        "name": "소울빌라",
+        "type": "원룸",
+        "address": "서울특별시 성북구 정릉2동 9-34",
+        "coordinate": "",
+        "floor": "반지하",
+        "price": 5000000,
+        "size": "8평",
+        "cctv": 1,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/44-1.jpg"
+    },
+    {
+        "id": 45,
+        "name": "시티하우스",
+        "type": "원룸",
+        "address": "서울특별시 성북구 길음2동 39-68",
+        "coordinate": "",
+        "floor": "1층",
+        "price": 9500000,
+        "size": "10평",
+        "cctv": 5,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/45-1.jpg"
+    },
+    {
+        "id": 46,
+        "name": "리버스테이",
+        "type": "원룸",
+        "address": "서울특별시 성북구 길음1동 39-24",
+        "coordinate": "",
+        "floor": "3층",
+        "price": 7500000,
+        "size": "7평",
+        "cctv": 7,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/46-1.jpg"
+    },
+    {
+        "id": 47,
+        "name": "에코아트빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 보문동 42-92",
+        "coordinate": "",
+        "floor": "2층",
+        "price": 1000000,
+        "size": "17평",
+        "cctv": 4,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/47-1.jpg"
+    },
+    {
+        "id": 48,
+        "name": "블루오피스텔",
+        "type": "원룸",
+        "address": "서울특별시 성북구 보문동4가 1-92",
+        "coordinate": "",
+        "floor": "5층",
+        "price": 2000000,
+        "size": "9평",
+        "cctv": 6,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": false,
+            "publicSecurityFacility": false
+        },
+        "photo": "/images/rooms/48-1.jpg"
+    },
+    {
+        "id": 49,
+        "name": "시크빌",
+        "type": "원룸",
+        "address": "서울특별시 성북구 삼선동 31-8",
+        "coordinate": "",
+        "floor": "반지하",
+        "price": 4500000,
+        "size": "6평",
+        "cctv": 8,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": true,
+            "hospital": false,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/49-1.jpg"
+    },
+    {
+        "id": 50,
+        "name": "골든스테이",
+        "type": "원룸",
+        "address": "서울특별시 성북구 삼선동2가 50-98",
+        "coordinate": "",
+        "floor": "2층",
+        "price": 8000000,
+        "size": "18평",
+        "cctv": 9,
+        "infrastructure": {
+            "subway": true,
+            "convenienceStore": false,
+            "hospital": true,
+            "publicSecurityFacility": true
+        },
+        "photo": "/images/rooms/50-1.jpg"
+    }
+]
