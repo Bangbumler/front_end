@@ -91,6 +91,7 @@ const RoomModal = ({ isOpen, onClose, room }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
+      ariaHideApp={false}
       contentLabel="Room Details"
       style={{
         overlay: {
