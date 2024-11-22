@@ -94,7 +94,10 @@ const SecondPage = () => {
     const handleRoomPageButton = () => {
         navigate('/map'); 
     };
-
+    
+    const handleCommunityPageButton = () => {
+        navigate('/community'); 
+    };
     return (
         <PageContainer>
             <Helmet>
@@ -130,7 +133,7 @@ const SecondPage = () => {
                         실제 입주자들의 경험을 공유받아 방의 상태나 주변 환경에 대해<br></br>
                         보다 현실적이고 진솔한 평가를 확인할 수 있습니다.
                     </CardDescription>
-                    <CardButton>커뮤니티 바로가기 ➜</CardButton>
+                    <CardButton onClick={handleCommunityPageButton}>커뮤니티 바로가기 ➜</CardButton>
                     <Image src={communityImg} />
                 </Card>
             </CardContainer>
