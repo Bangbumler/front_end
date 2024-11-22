@@ -3,18 +3,17 @@ import styled from 'styled-components';
 import infraIcon from "../../assets/icons/infra.png";
 import safetyIcon from "../../assets/icons/safety.png";
 import heartIcon from "../../assets/icons/heart.png";
-// 전체 버튼 컨테이너
+
 const FloatingButtonContainer = styled.div`
-  position: absolute; /* 부모 요소에 겹치기 */
-  bottom: 20px; /* 아래에서 간격 */
-  right: 20px; /* 오른쪽에서 간격 */
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* 버튼 간격 */
-  z-index: 10; /* 지도 위에 위치하도록 z-index 설정 */
+  gap: 10px;
+  z-index: 10;
 `;
 
-// 개별 버튼 스타일
 const FloatingButton = styled.button`
   display: flex;
   align-items: center;
@@ -32,29 +31,29 @@ const FloatingButton = styled.button`
 
   &:hover {
     background-color: #f5f5f5;
-    transform: translateY(-2px); /* 살짝 떠오르는 효과 */
+    transform: translateY(-2px);
   }
 
   img {
     width: 20px;
     height: 20px;
-    margin-right: 8px; /* 아이콘과 텍스트 간격 */
+    margin-right: 8px;
   }
 `;
 
-const MapButtons = () => {
+const MapButtons = ({ onFilterChange }) => {
   return (
     <FloatingButtonContainer>
-      <FloatingButton>
-      <img src={infraIcon}/>
+      <FloatingButton onClick={() => onFilterChange("infra")}>
+        <img src={infraIcon} alt="인프라" />
         인프라
       </FloatingButton>
-      <FloatingButton>
-        <img src={safetyIcon}/>
+      <FloatingButton onClick={() => onFilterChange("safety")}>
+        <img src={safetyIcon} alt="안전" />
         안전
       </FloatingButton>
-      <FloatingButton>
-        <img src={heartIcon}/>
+      <FloatingButton onClick={() => onFilterChange("favorites")}>
+        <img src={heartIcon} alt="찜" />
         찜
       </FloatingButton>
     </FloatingButtonContainer>
