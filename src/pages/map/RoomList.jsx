@@ -99,16 +99,19 @@ const RoomPrice = styled.div`
 
 const RoomDetails = styled.div`
   font-size: 14px;
-  color: #999;
+  color: black;
 `;
 const RoomTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center; /* 수직 중앙 정렬 */
-  gap: 8px; /* 각 텍스트 요소 간의 간격 */
   padding-left: 10px; /* 이미지와 텍스트 간격 */
 `;
-
+const RoomCategory = styled.div`
+  font-size : 14px;
+  color : black;
+  margin-bottom:10px;
+`;
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -155,26 +158,9 @@ const HamburgerMenu = styled.div`
   }
 `;
 
-const RoomList = () => {
-  const [rooms, setRooms] = useState([]);
+const RoomList = ({ rooms }) => {
   const [favorites, setFavorites] = useState({});
 
-  useEffect(() => {
-    const fetchRooms = async () => {
-      try {
-        const response = await fetch("/assets/data/room.json");
-        if (!response.ok) {
-          throw new Error(`json error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setRooms(data);
-      } catch (error) {
-        console.error("Error loading room data:", error);
-      }
-    };
-
-    fetchRooms();
-  }, []);
   const toggleFavorite = (id) => {
     setFavorites((prev) => ({
       ...prev,
@@ -184,43 +170,39 @@ const RoomList = () => {
 
   return (
     <ListContainer>
-    <HeaderContainer>
-      {/* 버튼 그룹 */}
-      <ButtonGroup>
-        <HeaderButton>월세</HeaderButton>
-        <HeaderButton>전세</HeaderButton>
-      </ButtonGroup>
-
-      {/* 햄버거 메뉴 */}
-      <HamburgerMenu>
-        <span></span>
-        <span></span>
-        <span></span>
-      </HamburgerMenu>
-    </HeaderContainer>
+      <HeaderContainer>
+        <ButtonGroup>
+          <HeaderButton>월세</HeaderButton>
+          <HeaderButton>전세</HeaderButton>
+        </ButtonGroup>
+        <HamburgerMenu>
+          <span></span>
+          <span></span>
+          <span></span>
+        </HamburgerMenu>
+      </HeaderContainer>
       {rooms.map((room) => (
-        <ListItemContainer key={room.id}>
-          <ListImage src={require(`../../assets/images/${room.photo}`)} alt={room.name} />
+        <ListItemContainer key={room.saleNumber}>
+          <ListImage src={`/assets/${room.photo}`} alt={room.name || room.type} />
           <FavoriteButton
-            filled={favorites[room.id]}
-            onClick={() => toggleFavorite(room.id)}
+            filled={favorites[room.saleNumber]}
+            onClick={() => toggleFavorite(room.saleNumber)}
           >
-            {favorites[room.id] ? "❤️" : "🤍"}
+            {favorites[room.saleNumber] ? "❤️" : "🤍"}
           </FavoriteButton>
-
           <RoomTextContainer>
-            <RoomName>{room.name}</RoomName>
-            <RoomPrice>{room.price.toLocaleString()}원</RoomPrice>
-            <RoomDetails>
-              {room.size} / {room.floor}
-            </RoomDetails>
-        </RoomTextContainer>
+            <RoomName>{room.price}</RoomName>
+            <RoomCategory>{room.type} </RoomCategory>
+            <RoomDetails>층수: {room.floor}</RoomDetails>
+            <RoomDetails>{room.description}</RoomDetails>
+            <RoomDetails>면적: {room.exclusiveArea}</RoomDetails>
+            <RoomDetails>관리비: {room.maintenanceCost}</RoomDetails>
+          </RoomTextContainer>
         </ListItemContainer>
       ))}
-
     </ListContainer>
   );
 };
 
-
 export default RoomList;
+
