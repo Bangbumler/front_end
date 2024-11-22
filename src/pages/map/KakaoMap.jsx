@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { kakaoMapAPIkey } from './APIKey';
+import RoomModal from './RoomModal';
 
 const KakaoMap = ({ style, rooms }) => {
   const mapContainer = useRef(null);
+  const [selectedRoom, setSelectedRoom] = useState(null); // 선택된 방 정보
+  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -43,7 +46,6 @@ const KakaoMap = ({ style, rooms }) => {
             (coord) => new window.kakao.maps.LatLng(coord.lat, coord.lng)
           );
 
-          // safety 값에 따라 색상과 투명도를 설정
           let fillColor, strokeColor, fillOpacity, strokeOpacity;
 
           switch (polygon.safety) {
@@ -89,30 +91,43 @@ const KakaoMap = ({ style, rooms }) => {
 
         // 방 데이터를 기반으로 마커 생성
         if (rooms && rooms.length > 0) {
-          // console.log('Rooms data:', rooms); // rooms 데이터 확인
-
           rooms.forEach((room) => {
             const position = new window.kakao.maps.LatLng(
               room.coordinate.latitude,
               room.coordinate.longitude
             );
-              console.log(room.coordinate.latitude);
-              console.log(room.coordinate.longitude);
+
             const marker = new window.kakao.maps.Marker({
               map: map,
               position: position,
               title: room.type || '방',
             });
 
+            // 마커 클릭 이벤트 추가
+            window.kakao.maps.event.addListener(marker, 'click', () => {
+              setSelectedRoom(room); // 선택된 방 설정
+              setIsModalOpen(true); // 모달 열기
+            });
           });
         }
       });
     };
 
     document.head.appendChild(script);
-  }, [rooms]); // rooms가 변경될 때마다 마커 업데이트
+  }, [rooms]);
 
-  return <div ref={mapContainer} style={{ width: '100%', height: '100%', ...style }} />;
+  // 모달 닫기 핸들러
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedRoom(null);
+  };
+
+  return (
+    <>
+      <div ref={mapContainer} style={{ width: '100%', height: '100%', ...style }} />
+      <RoomModal isOpen={isModalOpen} onClose={closeModal} room={selectedRoom} />
+    </>
+  );
 };
 
 export default KakaoMap;
