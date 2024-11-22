@@ -5,7 +5,7 @@
             "latitude": 37.585487533417336,
             "longitude": 127.01027743859059
         },
-        "photo": "/images/rooms/1-1.jpg",
+        "photo": "images/rooms/1-1.jpg",
         "lease": "전세",
         "price": "2억5000",
         "description": "투룸 전세 내부상태 좋음 보증보험 가능함",
@@ -31,11 +31,11 @@
     },
     {
         "saleNumber": "0000002",
-        "coordinates":{
+        "coordinate":{
             "latitude": 37.59453942049957,
             "longitude": 127.01738968649765
         },
-        "photo": "/images/rooms/2-1.jpg",
+        "photo": "images/rooms/2-1.jpg",
         "lease": "월세",
         "price": "1000/60",
         "description": "초역세권, 위치최고, 풀옵션",
@@ -65,7 +65,7 @@
             "latitude": 37.60140543774192,
             "longitude": 127.01388075338339
         },
-        "photo": "/images/rooms/3-1.jpg",
+        "photo": "images/rooms/3-1.jpg",
         "lease": "월세",
         "price": "3000/95",
         "description": "정릉역 3분. 주차가능. 방2. 넓은거실. 채광 좋음. 엘베 유",
@@ -95,7 +95,7 @@
             "latitude": 37.58046327988857,
             "longitude": 127.01981196232742
         },
-        "photo": "/images/rooms/4-1.jpg",
+        "photo": "images/rooms/4-1.jpg",
         "lease": "월세",
         "price": "1억/70",
         "description": "2층 단독사용 넓은 거실과 넓은 투룸",
@@ -114,7 +114,7 @@
         "summary": "2층, 82.64m², 관리비 없음\n보문역 20분 거리",
         "infrastructure": {
             "subway": "900m",
-            "convenienceStore": "10m",
+            "convenienceStore": "70m",
             "hospital": "700m",
             "publicSecurityFacility": "900m"
         }
@@ -125,7 +125,7 @@
             "latitude": 37.58508308582959,
             "longitude": 127.03054910310289
         },
-        "photo": "/images/rooms/5-1.jpg",
+        "photo": "images/rooms/5-1.jpg",
         "lease": "월세",
         "price": "500/35",
         "description": "뽀송 쾌적 습기 전혀 없음 확인 도배 완료",
@@ -155,7 +155,7 @@
             "latitude": 37.600811735650545,
             "longitude": 127.03211544225256
         },
-        "photo": "/images/rooms/6-1.jpg",
+        "photo": "images/rooms/6-1.jpg",
         "lease": "전세",
         "price": "1억5000",
         "description": "리모델링 넓은투룸,풀옵션,대출불가",
@@ -185,7 +185,7 @@
             "latitude": 37.60418001034693,
             "longitude": 127.0435944878551
         },
-        "photo": "/images/rooms/7-1.jpg",
+        "photo": "images//rooms/7-1.jpg",
         "lease": "전세",
         "price": "6000",
         "description": "발 빠르게 깨끗하고 조용한 풀옵션 보세요",
@@ -215,7 +215,7 @@
             "latitude": 37.608052988377,
             "longitude": 127.06162096405791
         },
-        "photo": "/images/rooms/8-1.jpg",
+        "photo": "images/rooms/8-1.jpg",
         "lease": "전세",
         "price": "1억7000",
         "description": "깔끔하고 채광 좋은 투룸 전세",

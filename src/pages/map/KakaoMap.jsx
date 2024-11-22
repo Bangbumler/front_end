@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { kakaoMapAPIkey } from './APIKey';
+import RoomModal from './RoomModal';
 
-const KakaoMap = ({ style }) => {
+const KakaoMap = ({ style, rooms }) => {
   const mapContainer = useRef(null);
+  const [selectedRoom, setSelectedRoom] = useState(null); // 선택된 방 정보
+  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -43,59 +46,88 @@ const KakaoMap = ({ style }) => {
             (coord) => new window.kakao.maps.LatLng(coord.lat, coord.lng)
           );
 
-          // safety 값에 따라 색상과 투명도를 설정
           let fillColor, strokeColor, fillOpacity, strokeOpacity;
 
           switch (polygon.safety) {
             case '안전': // 초록색
-              fillColor = '#32cd32'; // 내부 색상 (연두색)
-              strokeColor = '#008000'; // 외곽선 색상 (초록색)
-              fillOpacity = 0.2; // 내부 투명도
-              strokeOpacity = 0.8; // 외곽선 투명도
+              fillColor = '#32cd32';
+              strokeColor = '#008000';
+              fillOpacity = 0.2;
+              strokeOpacity = 0.8;
               break;
 
             case '주의': // 노란색
-              fillColor = '#ffd700'; // 내부 색상 (노란색)
-              strokeColor = '#ffa500'; // 외곽선 색상 (주황색)
-              fillOpacity = 0.3; // 내부 투명도
-              strokeOpacity = 0.8; // 외곽선 투명도
+              fillColor = '#ffd700';
+              strokeColor = '#ffa500';
+              fillOpacity = 0.3;
+              strokeOpacity = 0.8;
               break;
 
             case '위험': // 빨간색
-              fillColor = '#ff4500'; // 내부 색상 (빨간색)
-              strokeColor = '#8b0000'; // 외곽선 색상 (진빨간색)
-              fillOpacity = 0.4; // 내부 투명도
-              strokeOpacity = 0.9; // 외곽선 투명도
+              fillColor = '#ff4500';
+              strokeColor = '#8b0000';
+              fillOpacity = 0.4;
+              strokeOpacity = 0.9;
               break;
 
-            default: // 기본값
-              fillColor = polygon.fillColor || '#808080'; // 회색
-              strokeColor = polygon.strokeColor || '#505050'; // 회색
+            default:
+              fillColor = polygon.fillColor || '#808080';
+              strokeColor = polygon.strokeColor || '#505050';
               fillOpacity = polygon.fillOpacity || 0.2;
               strokeOpacity = polygon.strokeOpacity || 0.7;
               break;
           }
 
-          // 폴리곤 생성
           new window.kakao.maps.Polygon({
-            map: map, // 지도 객체
-            path: path, // 좌표
-            strokeWeight: polygon.strokeWeight || 1, // 선 두께
-            strokeColor: strokeColor, // 동적으로 설정된 선 색상
-            strokeOpacity: strokeOpacity, // 동적으로 설정된 선 투명도
-            fillColor: fillColor, // 동적으로 설정된 내부 색상
-            fillOpacity: fillOpacity, // 동적으로 설정된 내부 투명도
+            map: map,
+            path: path,
+            strokeWeight: polygon.strokeWeight || 1,
+            strokeColor: strokeColor,
+            strokeOpacity: strokeOpacity,
+            fillColor: fillColor,
+            fillOpacity: fillOpacity,
           });
-
-        
         });
+
+        // 방 데이터를 기반으로 마커 생성
+        if (rooms && rooms.length > 0) {
+          rooms.forEach((room) => {
+            const position = new window.kakao.maps.LatLng(
+              room.coordinate.latitude,
+              room.coordinate.longitude
+            );
+
+            const marker = new window.kakao.maps.Marker({
+              map: map,
+              position: position,
+              title: room.type || '방',
+            });
+
+            // 마커 클릭 이벤트 추가
+            window.kakao.maps.event.addListener(marker, 'click', () => {
+              setSelectedRoom(room); // 선택된 방 설정
+              setIsModalOpen(true); // 모달 열기
+            });
+          });
+        }
       });
     };
 
     document.head.appendChild(script);
-  }, []);
+  }, [rooms]);
 
-  return <div ref={mapContainer} style={{ width: '100%', height: '100%', ...style }} />;
+  // 모달 닫기 핸들러
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedRoom(null);
+  };
+
+  return (
+    <>
+      <div ref={mapContainer} style={{ width: '100%', height: '100%', ...style }} />
+      <RoomModal isOpen={isModalOpen} onClose={closeModal} room={selectedRoom} />
+    </>
+  );
 };
 
 export default KakaoMap;
