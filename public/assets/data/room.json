@@ -27,7 +27,8 @@
             "convenienceStore": "100m",
             "hospital": "800m",
             "publicSecurityFacility": "1.2km"
-        }
+        },
+        "reviews": []
     },
     {
         "saleNumber": "0000002",
@@ -57,7 +58,8 @@
             "convenienceStore": "200m",
             "hospital": "1km",
             "publicSecurityFacility": "2km"
-        }
+        },
+        "reviews": []
     },
     {
         "saleNumber": "0000003",
@@ -87,7 +89,8 @@
             "convenienceStore": "50m",
             "hospital": "2km",
             "publicSecurityFacility": "1km"
-        }
+        },
+        "reviews": []
     },
     {
         "saleNumber": "0000004",
@@ -117,7 +120,8 @@
             "convenienceStore": "70m",
             "hospital": "700m",
             "publicSecurityFacility": "900m"
-        }
+        },
+        "reviews": []
     },
     {
         "saleNumber": "0000005",
@@ -147,7 +151,8 @@
             "convenienceStore": "300m",
             "hospital": "800m",
             "publicSecurityFacility": "700m"
-        }
+        },
+        "reviews": []
     },
     {
         "saleNumber": "0000006",
@@ -177,7 +182,8 @@
             "convenienceStore": "700m",
             "hospital": "300m",
             "publicSecurityFacility": "100m"
-        }
+        },
+        "reviews": []
     },
     {
         "saleNumber": "0000007",
@@ -207,7 +213,8 @@
             "convenienceStore": "50m",
             "hospital": "1.5km",
             "publicSecurityFacility": "1.5km"
-        }
+        },
+        "reviews": []
     },
     {
         "saleNumber": "0000008",
@@ -237,6 +244,7 @@
             "convenienceStore": "10m",
             "hospital": "400m",
             "publicSecurityFacility": "1km"
-        }
+        },
+        "reviews": []
     }
 ]

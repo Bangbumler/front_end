@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+// import "./CommunityDetail.css";
 
 const CommunityDetail = () => {
   const { saleNumber } = useParams(); // URL 파라미터로부터 saleNumber 가져오기
