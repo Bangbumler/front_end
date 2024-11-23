@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CommunityMain.css";
 
 const CommunityMain = () => {
@@ -7,7 +8,7 @@ const CommunityMain = () => {
   const [filteredCards, setFilteredCards] = useState([]); // 필터된 카드 상태
   const [cards, setCards] = useState([]); // 카드 데이터 상태
   const cardsPerPage = 6; // 페이지당 카드 개수
-
+  
   // 페이지 로드 시 카드 데이터 로드
   useEffect(() => {
     const fetchData = async () => {
@@ -63,6 +64,13 @@ const CommunityMain = () => {
     setCurrentPage(pageNumber);
   };
 
+  const navigate = useNavigate();
+
+  // 카드 클릭 핸들러
+  const handleCardClick = (saleNumber) => {
+    navigate(`/community-detail/${saleNumber}`);
+  };
+
   return (
     <div className="community-main">
       {/* 검색 창 */}
@@ -87,11 +95,14 @@ const CommunityMain = () => {
         {currentCards.length > 0 ? (
           <div className="card-list">
             {currentCards.map((card, index) => (
-              <div className="card" key={index}>
-              {console.log(card.photo)}  {/* card.photo 값 확인 */}
+              <div
+              className="card"
+              key={index}
+              onClick={() => handleCardClick(card.saleNumber)}
+              >
+              
               <img
-                  src={`/assets/${card.photo}`}  // 변경된 경로
-                  alt={card.saleNumber}
+                  src={`/assets/${card.photo}`}
               />
               <h3>{card.price}</h3>
               <p>{card.type}</p>
