@@ -27,7 +27,8 @@
             "convenienceStore": "100m",
             "hospital": "800m",
             "publicSecurityFacility": "1.2km"
-        }
+        },
+        "reviews": ["그럭저럭", "집주인분이 괜찮아요"]
     },
     {
         "saleNumber": "0000002",
@@ -57,7 +58,8 @@
             "convenienceStore": "200m",
             "hospital": "1km",
             "publicSecurityFacility": "2km"
-        }
+        },
+        "reviews": ["평타예요."]
     },
     {
         "saleNumber": "0000003",
@@ -87,7 +89,8 @@
             "convenienceStore": "50m",
             "hospital": "2km",
             "publicSecurityFacility": "1km"
-        }
+        },
+        "reviews": ["오는 길에 오르막길 너무 힘들어요"]
     },
     {
         "saleNumber": "0000004",
@@ -117,7 +120,8 @@
             "convenienceStore": "70m",
             "hospital": "700m",
             "publicSecurityFacility": "900m"
-        }
+        },
+        "reviews": ["최악! 오지 마세요.", "나쁘지 않았어요"]
     },
     {
         "saleNumber": "0000005",
@@ -147,7 +151,8 @@
             "convenienceStore": "300m",
             "hospital": "800m",
             "publicSecurityFacility": "700m"
-        }
+        },
+        "reviews": ["설명이랑 달라요."]
     },
     {
         "saleNumber": "0000006",
@@ -177,7 +182,8 @@
             "convenienceStore": "700m",
             "hospital": "300m",
             "publicSecurityFacility": "100m"
-        }
+        },
+        "reviews": ["좋네요", "음...", "벌레 많아요"]
     },
     {
         "saleNumber": "0000007",
@@ -207,7 +213,8 @@
             "convenienceStore": "50m",
             "hospital": "1.5km",
             "publicSecurityFacility": "1.5km"
-        }
+        },
+        "reviews": ["여기 사는 사람은 축복 받은 거예요."]
     },
     {
         "saleNumber": "0000008",
@@ -237,6 +244,7 @@
             "convenienceStore": "10m",
             "hospital": "400m",
             "publicSecurityFacility": "1km"
-        }
+        },
+        "reviews": ["나름... 괜찮았어요", "좋아요"]
     }
 ]
