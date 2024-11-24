@@ -121,17 +121,9 @@ const RoomDetails = styled.div`
   color: black;
 `;
 
-const RoomList = ({ rooms }) => {
-  const [favorites, setFavorites] = useState({});
+const RoomList = ({ rooms,favorites, onToggleFavorite }) => {
   const [selectedRoom, setSelectedRoom] = useState(null); // 선택된 방 데이터
   const [isModalOpen, setModalOpen] = useState(false); // Modal 열림 여부
-
-  const toggleFavorite = (id) => {
-    setFavorites((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
 
   const openModal = (room) => {
     setSelectedRoom(room); // 클릭된 방 데이터를 설정
@@ -161,13 +153,13 @@ const RoomList = ({ rooms }) => {
           <ListItemContainer key={room.saleNumber} onClick={() => openModal(room)}>
             <ListImage src={`/assets/${room.photo}`} alt={room.name || room.type} />
             <FavoriteButton
-              filled={favorites[room.saleNumber]}
+              filled={favorites.includes(room.saleNumber)} // 배열로 체크
               onClick={(e) => {
                 e.stopPropagation(); // Modal 열림 방지
-                toggleFavorite(room.saleNumber);
+                onToggleFavorite(room.saleNumber);
               }}
             >
-              {favorites[room.saleNumber] ? "❤️" : "🤍"}
+              {favorites.includes(room.saleNumber) ? "❤️" : "🤍"}
             </FavoriteButton>
             <RoomTextContainer>
               <RoomName>{room.price}</RoomName>

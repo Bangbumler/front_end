@@ -25,6 +25,7 @@ const KakaoMap = ({ style, rooms }) => {
 
         // 데이터 불러오기 함수
         const fetchPolygonData = async () => {
+          
           try {
             const response = await fetch('/assets/data/map.json'); // JSON 파일 경로
             if (!response.ok) {
@@ -38,14 +39,13 @@ const KakaoMap = ({ style, rooms }) => {
           }
         };
 
-        // 폴리곤 데이터를 지도에 그리기
         const polygonData = await fetchPolygonData();
-
+        
+      
         polygonData.forEach((polygon) => {
           const path = polygon.coordinates.map(
             (coord) => new window.kakao.maps.LatLng(coord.lat, coord.lng)
           );
-
           let fillColor, strokeColor, fillOpacity, strokeOpacity;
 
           switch (polygon.safety) {
@@ -89,7 +89,6 @@ const KakaoMap = ({ style, rooms }) => {
           });
         });
 
-        // 방 데이터를 기반으로 마커 생성
         if (rooms && rooms.length > 0) {
           rooms.forEach((room) => {
             const position = new window.kakao.maps.LatLng(
@@ -103,10 +102,9 @@ const KakaoMap = ({ style, rooms }) => {
               title: room.type || '방',
             });
 
-            // 마커 클릭 이벤트 추가
             window.kakao.maps.event.addListener(marker, 'click', () => {
-              setSelectedRoom(room); // 선택된 방 설정
-              setIsModalOpen(true); // 모달 열기
+              setSelectedRoom(room); 
+              setIsModalOpen(true); 
             });
           });
         }
@@ -116,7 +114,6 @@ const KakaoMap = ({ style, rooms }) => {
     document.head.appendChild(script);
   }, [rooms]);
 
-  // 모달 닫기 핸들러
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedRoom(null);

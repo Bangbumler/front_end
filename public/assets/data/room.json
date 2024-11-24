@@ -2,13 +2,13 @@
     {
         "saleNumber": "0000001",
         "coordinate": {
-            "latitude": 37.585487533417336,
-            "longitude": 127.01027743859059
+            "latitude": 37.59043422385236,
+            "longitude": 127.0069860636522
         },
-        "photo": "images/rooms/1-1.jpg",
+        "photo": "/images/rooms/1-1.jpg",
         "lease": "전세",
         "price": "2억5000",
-        "description": "내부상태 좋음 보증보험 가능함",
+        "description": "투룸 전세 내부상태 좋음 보증보험 가능함",
         "type": "오피스텔",
         "exclusiveArea": "29.89m²",
         "floor": "5층/5층",
@@ -36,7 +36,7 @@
             "latitude": 37.59453942049957,
             "longitude": 127.01738968649765
         },
-        "photo": "images/rooms/2-1.jpg",
+        "photo": "/images/rooms/2-1.jpg",
         "lease": "월세",
         "price": "1000/60",
         "description": "초역세권, 위치최고, 풀옵션",
@@ -64,13 +64,13 @@
     {
         "saleNumber": "0000003",
         "coordinate": {
-            "latitude": 37.60140543774192,
-            "longitude": 127.01388075338339
+            "latitude": 37.59282561005513,
+            "longitude": 127.01501145902839
         },
-        "photo": "images/rooms/3-1.jpg",
+        "photo": "/images/rooms/3-1.jpg",
         "lease": "월세",
         "price": "3000/95",
-        "description": "정릉역 3분. 주차가능. 방2. 넓은거실. 채광 좋음. 엘베 유",
+        "description": "성신여대입구역 3분. 주차가능. 방2. 넓은거실. 채광 좋음. 엘베 유",
         "type": "투룸",
         "exclusiveArea": "55.28m²",
         "floor": "3층/5층",
@@ -83,7 +83,7 @@
         "totalParking": "총 8대",
         "movingIn": "2024.12.30 (협의 가능)",
         "option": ["신발장"],
-        "summary": "3층, 55.28m², 관리비 20만\n정릉역 3분 거리",
+        "summary": "3층, 55.28m², 관리비 20만\n성신여대입구역 3분 거리",
         "infrastructure": {
             "subway": "100m",
             "convenienceStore": "50m",
@@ -95,10 +95,10 @@
     {
         "saleNumber": "0000004",
         "coordinate": {
-            "latitude": 37.58046327988857,
-            "longitude": 127.01981196232742
+            "latitude": 37.595961107599784,
+            "longitude": 127.01464124528333
         },
-        "photo": "images/rooms/4-1.jpg",
+        "photo": "/images/rooms/4-1.jpg",
         "lease": "월세",
         "price": "1억/70",
         "description": "2층 단독사용 넓은 거실과 넓은 투룸",
@@ -114,7 +114,7 @@
         "totalParking": "-",
         "movingIn": "즉시 입주 (협의 가능)",
         "option": ["싱크대"],
-        "summary": "2층, 82.64m², 관리비 없음\n보문역 20분 거리",
+        "summary": "2층, 82.64m², 관리비 없음\n성신여대입구역 20분 거리",
         "infrastructure": {
             "subway": "900m",
             "convenienceStore": "70m",
@@ -126,10 +126,10 @@
     {
         "saleNumber": "0000005",
         "coordinate": {
-            "latitude": 37.58508308582959,
-            "longitude": 127.03054910310289
+            "latitude": 37.59265475668677,
+            "longitude": 127.01209292974322
         },
-        "photo": "images/rooms/5-1.jpg",
+        "photo": "/images/rooms/5-1.jpg",
         "lease": "월세",
         "price": "500/35",
         "description": "뽀송 쾌적 습기 전혀 없음 확인 도배 완료",
@@ -145,7 +145,7 @@
         "totalParking": "-",
         "movingIn": "즉시 입주 (협의 가능)",
         "option": ["신발장", "냉장고", "세탁기", "싱크대"],
-        "summary": "반지층, 23.14m², 관리비 없음\n안암역 15분 거리",
+        "summary": "반지층, 23.14m², 관리비 없음\n한성대입구역 20분 거리",
         "infrastructure": {
             "subway": "700m",
             "convenienceStore": "300m",
@@ -157,10 +157,10 @@
     {
         "saleNumber": "0000006",
         "coordinate": {
-            "latitude": 37.600811735650545,
-            "longitude": 127.03211544225256
+            "latitude": 37.5883497657727,
+            "longitude": 127.01625884539172
         },
-        "photo": "images/rooms/6-1.jpg",
+        "photo": "/images/rooms/6-1.jpg",
         "lease": "전세",
         "price": "1억5000",
         "description": "리모델링 넓은투룸,풀옵션,대출불가",
@@ -176,7 +176,7 @@
         "totalParking": "-",
         "movingIn": "즉시 입주",
         "option": ["신발장", "냉장고", "세탁기", "싱크대", "인덕션", "에어컨"],
-        "summary": "1층, 42.97m², 관리비 5만원\n길음역 25분 거리",
+        "summary": "1층, 42.97m², 관리비 5만원\n보문역 16분 거리",
         "infrastructure": {
             "subway": "1km",
             "convenienceStore": "700m",
@@ -188,10 +188,10 @@
     {
         "saleNumber": "0000007",
         "coordinate": {
-            "latitude": 37.60418001034693,
-            "longitude": 127.0435944878551
+            "latitude": 37.58828303813341,
+            "longitude": 127.00802751470901
         },
-        "photo": "images//rooms/7-1.jpg",
+        "photo": "/images/rooms/7-1.jpg",
         "lease": "전세",
         "price": "6000",
         "description": "발 빠르게 깨끗하고 조용한 풀옵션 보세요",
@@ -207,7 +207,7 @@
         "totalParking": "총 1대",
         "movingIn": "2025.03.01",
         "option": ["신발장", "냉장고", "세탁기", "싱크대", "인덕션", "에어컨"],
-        "summary": "2층, 23.14m², 관리비 6만원\n월곡역 5분 거리",
+        "summary": "2층, 23.14m², 관리비 6만원\n한성대입구역 5분 거리",
         "infrastructure": {
             "subway": "300m",
             "convenienceStore": "50m",
@@ -219,10 +219,10 @@
     {
         "saleNumber": "0000008",
         "coordinate": {
-            "latitude": 37.608052988377,
-            "longitude": 127.06162096405791
+            "latitude": 37.589334562209125,
+            "longitude": 127.01246037265078
         },
-        "photo": "images/rooms/8-1.jpg",
+        "photo": "/images/rooms/8-1.jpg",
         "lease": "전세",
         "price": "1억7000",
         "description": "깔끔하고 채광 좋은 투룸 전세",
@@ -238,7 +238,7 @@
         "totalParking": "-",
         "movingIn": "즉시 입주 (협의 가능)",
         "option": [],
-        "summary": "1층, 37m², 관리비 3만원\n돌곶이역 20분 거리",
+        "summary": "1층, 37m², 관리비 3만원\n한성대입구역 15분 거리",
         "infrastructure": {
             "subway": "900m",
             "convenienceStore": "10m",
