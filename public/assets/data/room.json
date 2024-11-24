@@ -28,7 +28,7 @@
             "hospital": "800m",
             "publicSecurityFacility": "1.2km"
         },
-        "reviews": []
+        "reviews": ["그럭저럭", "집주인분이 괜찮아요"]
     },
     {
         "saleNumber": "0000002",
@@ -59,7 +59,7 @@
             "hospital": "1km",
             "publicSecurityFacility": "2km"
         },
-        "reviews": []
+        "reviews": ["평타예요."]
     },
     {
         "saleNumber": "0000003",
@@ -90,7 +90,7 @@
             "hospital": "2km",
             "publicSecurityFacility": "1km"
         },
-        "reviews": []
+        "reviews": ["오는 길에 오르막길 너무 힘들어요"]
     },
     {
         "saleNumber": "0000004",
@@ -121,7 +121,7 @@
             "hospital": "700m",
             "publicSecurityFacility": "900m"
         },
-        "reviews": []
+        "reviews": ["최악! 오지 마세요.", "나쁘지 않았어요"]
     },
     {
         "saleNumber": "0000005",
@@ -152,7 +152,7 @@
             "hospital": "800m",
             "publicSecurityFacility": "700m"
         },
-        "reviews": []
+        "reviews": ["설명이랑 달라요."]
     },
     {
         "saleNumber": "0000006",
@@ -183,7 +183,7 @@
             "hospital": "300m",
             "publicSecurityFacility": "100m"
         },
-        "reviews": ["좋네요", "음..."]
+        "reviews": ["좋네요", "음...", "벌레 많아요"]
     },
     {
         "saleNumber": "0000007",
@@ -214,7 +214,7 @@
             "hospital": "1.5km",
             "publicSecurityFacility": "1.5km"
         },
-        "reviews": []
+        "reviews": ["여기 사는 사람은 축복 받은 거예요."]
     },
     {
         "saleNumber": "0000008",
@@ -245,6 +245,6 @@
             "hospital": "400m",
             "publicSecurityFacility": "1km"
         },
-        "reviews": []
+        "reviews": ["나름... 괜찮았어요", "좋아요"]
     }
 ]
