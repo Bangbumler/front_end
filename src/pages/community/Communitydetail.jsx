@@ -13,8 +13,7 @@ const PageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px 20px 0 20px;
-  padding-top: 100px;
+  padding: 100px 20px 50px 20px;
 `;
 
 const CommunityDetailInfo = styled.div`
@@ -23,7 +22,7 @@ const CommunityDetailInfo = styled.div`
   margin: auto;
   width: 100%;
   max-width: 1200px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-height: 80vh;
 `;
 
 const SaleNumberSection = styled.div`
