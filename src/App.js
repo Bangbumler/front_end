@@ -7,7 +7,7 @@ import MyPage from './pages/mypage';
 import MapLayout from './pages/map/MapLayout';
 import CommunityMain from './pages/community/CommunityMain';
 import CommunityDetail from "./pages/community/Communitydetail";
-
+import Main from './Main/Main';
 const App = () => {
   const location = useLocation();
 
@@ -16,7 +16,7 @@ const App = () => {
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} /> 
+          <Route path="/" element={<Main />} /> 
           <Route path="/map" element={<MapLayout />} />
           <Route path="/community" element={<CommunityMain />} />
           <Route path="/community-detail/:saleNumber" element={<CommunityDetail />} />

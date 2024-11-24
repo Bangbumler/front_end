@@ -122,7 +122,7 @@ const RoomDetails = styled.div`
 `;
 
 const RoomList = ({ rooms,favorites, onToggleFavorite }) => {
-  const [selectedRoom, setSelectedRoom] = useState(null); // 선택된 방 데이터
+  const [selectedRoom, setSelectedRoom] = useState(null); 
   const [isModalOpen, setModalOpen] = useState(false); // Modal 열림 여부
 
   const openModal = (room) => {
