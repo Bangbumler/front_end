@@ -183,7 +183,7 @@
             "hospital": "300m",
             "publicSecurityFacility": "100m"
         },
-        "reviews": []
+        "reviews": ["좋네요", "음..."]
     },
     {
         "saleNumber": "0000007",
