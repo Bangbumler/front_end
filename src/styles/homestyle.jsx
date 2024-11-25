@@ -199,7 +199,9 @@ export const SecondSection = styled.section`
         width: 124%;
         height: auto;
         border-radius: 10px;
-        margin-left: -48px; /* img1만 왼쪽으로 이동 */
+        margin-left: -48px; 
+        border: none;
+        box-shadow: none;
       }
 
       .img2 {
@@ -208,6 +210,8 @@ export const SecondSection = styled.section`
         border-radius: 10px;
         margin-left: -86px;
         margin-top:50px;
+        border: none;
+        box-shadow: none;
       }
     }
   }
