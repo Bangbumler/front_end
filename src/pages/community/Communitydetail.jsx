@@ -13,7 +13,7 @@ const PageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 100px 20px 50px 20px;
+  padding: 50px 20px 50px 20px;
 `;
 
 const CommunityDetailInfo = styled.div`
@@ -23,6 +23,8 @@ const CommunityDetailInfo = styled.div`
   width: 100%;
   max-width: 1200px;
   min-height: 80vh;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const SaleNumberSection = styled.div`
@@ -50,8 +52,9 @@ const RoomImageSection = styled.div`
 
 const RoomImage = styled.img`
   width: 100%;
-  max-width: 800px;
+  max-width: 400px;
   height: auto;
+  border-radius: 5px;
 `;
 
 const DetailInfoSection = styled.div`

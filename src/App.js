@@ -8,6 +8,8 @@ import MapLayout from './pages/map/MapLayout';
 import CommunityMain from './pages/community/CommunityMain';
 import CommunityDetail from './pages/community/Communitydetail';
 import Search from './pages/search';
+import Login from './pages/login'; // 로그인 컴포넌트 추가
+import Signup from './pages/signup'; // 회원가입 컴포넌트 추가
 
 const App = () => {
   const location = useLocation();
@@ -24,7 +26,7 @@ const App = () => {
     );
   };
 
-  const hideFooterPaths = ['/mypage', '/community', '/community-detail'];
+  const hideFooterPaths = ['/mypage', '/community', '/community-detail', '/login', '/signup'];
   const shouldHideFooter = hideFooterPaths.some((path) => location.pathname.startsWith(path));
 
   return (
@@ -44,6 +46,8 @@ const App = () => {
           <Route path="/community" element={<CommunityMain />} />
           <Route path="/community-detail/:saleNumber" element={<CommunityDetail />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/login" element={<Login />} /> {/* 로그인 경로 추가 */}
+          <Route path="/signup" element={<Signup />} /> {/* 회원가입 경로 추가 */}
         </Routes>
       </main>
       {!shouldHideFooter && <Footer />}

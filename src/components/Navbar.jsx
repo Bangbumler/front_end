@@ -1,8 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/images/Logo.png'; 
 
 function Navbar() {
+  const navigate = useNavigate(); // useNavigate로 경로 이동
+
+  const handleSearchClick = () => {
+    navigate('/community'); // Search 클릭 시 CommunityMain으로 이동
+  };
+
+  const handleCommunityClick = () => {
+    navigate('/community-detail'); // Community 클릭 시 CommunityDetail로 바로 이동
+  };
+
   const navbarStyle = {
     background: '#FFFFFF', 
     borderBottom: '1px solid #e0e0e0', 
@@ -25,6 +35,7 @@ function Navbar() {
     textDecoration: 'none',
     fontSize: '1rem',
     fontWeight: '500',
+    cursor: 'pointer', // 링크처럼 동작
   };
 
   const loginStyle = {
@@ -36,11 +47,10 @@ function Navbar() {
   const logoStyle = {
     height: '40px', 
     width: 'auto', 
-  }
+  };
 
   return (
     <header style={navbarStyle}>
-      
       <div>
         <Link to="/">
           <img src={Logo} alt="방범러 로고" style={logoStyle} />
@@ -53,10 +63,14 @@ function Navbar() {
             <Link to="/" style={navItemStyle}>Home</Link>
           </li>
           <li>
-            <Link to="/search" style={navItemStyle}>Search</Link>
+            <span style={navItemStyle} onClick={handleSearchClick}>
+              Search
+            </span>
           </li>
           <li>
-            <Link to="/community" style={navItemStyle}>Community</Link>
+            <span style={navItemStyle} onClick={handleCommunityClick}>
+              Community
+            </span>
           </li>
           <li>
             <Link to="/mypage" style={navItemStyle}>MyPage</Link>
