@@ -126,7 +126,7 @@ export const FirstSection = styled.section`
 export const SecondSection = styled.section`
   display: flex;
   justify-content: center;
-  gap: 13rem;
+  gap: 6rem; /* 간격을 6rem으로 줄임 */
   padding: 4rem 2rem;
   position: relative; /* 제목 배치를 위한 기준점 설정 */
   background: ${(props) => getDynamicGradient(props.scrollY)};
@@ -226,3 +226,4 @@ export const SecondSection = styled.section`
     }
   }
 `;
+
