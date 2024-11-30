@@ -6,11 +6,11 @@ function Navbar() {
   const navigate = useNavigate();
 
   const handleSearchClick = () => {
-    navigate('/map');
+    navigate('/map'); // Search 클릭 시 CommunityMain으로 이동
   };
 
   const handleCommunityClick = () => {
-    navigate('/community');
+    navigate('/community'); // Community 클릭 시 CommunityDetail로 바로 이동
   };
 
   const navbarStyle = {
