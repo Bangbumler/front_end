@@ -8,10 +8,11 @@ overflow-y: auto;
 border-right: ${(props) => (props.isHidden ? "none" : "1px solid #ddd")};
 display: ${(props) => (props.isHidden ? "none" : "flex")};
 flex-direction: column;
-background-color: #f9f9f9;
+background-color: #ffffff;
 padding: ${(props) => (props.isHidden ? "0" : "16px")};
 transition: all 0.3s ease;
 position: relative;
+
 `;
 
 const HeaderContainer = styled.div`
@@ -195,8 +196,8 @@ const RoomList = ({ rooms,favorites, onToggleFavorite }) => {
             <RoomTextContainer>
               <RoomName>{room.price}</RoomName>
               <RoomCategory>{room.type} </RoomCategory>
-              <RoomDetails>층수: {room.floor}</RoomDetails>
               <RoomDetails>{room.description}</RoomDetails>
+              <RoomDetails>층수: {room.floor}</RoomDetails>
               <RoomDetails>면적: {room.exclusiveArea}</RoomDetails>
               <RoomDetails>관리비: {room.maintenanceCost}</RoomDetails>
             </RoomTextContainer>

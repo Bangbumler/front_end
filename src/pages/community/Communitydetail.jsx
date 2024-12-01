@@ -8,12 +8,13 @@ import RecipeIcon from "../../assets/icons/recipe.png";
 import ReviewIcon from "../../assets/icons/review.png";
 
 const PageContainer = styled.div`
-  background: linear-gradient(180deg, #d8baff 0%, #b3d9ff 100%);
+  background: linear-gradient(180deg, #afafff 0%, #c7c7fa 100%);
   min-height: 1000px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 50px 20px 50px 20px;
+  border: 4px solid #efddff;
 `;
 
 const CommunityDetailInfo = styled.div`
@@ -21,10 +22,11 @@ const CommunityDetailInfo = styled.div`
   padding: 30px;
   margin: auto;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   min-height: 80vh;
   border-radius: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 4px solid #efddff;
 `;
 
 const SaleNumberSection = styled.div`

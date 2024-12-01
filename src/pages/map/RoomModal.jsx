@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import HouseIcon from "../../assets/icons/house.png";
 import FloorIcon from "../../assets/icons/floor.png";
 import AreaIcon from "../../assets/icons/area.png";
@@ -12,6 +12,20 @@ import SinkIcon from "../../assets/icons/싱크대.png";
 import FireIcon from "../../assets/icons/인덕션.png";
 import AirIcon from "../../assets/icons/에어컨.png";
 
+// 전역 폰트 정의
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Maple';
+    src: url('../../fonts/Maplestory Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'MapleL';
+    src: url('../../fonts/Maplestory Light.ttf') format('truetype');
+  }
+  body {
+    font-family: 'MapleL'
+  }
+`;
 
 // Styled-components
 const ModalContent = styled.div`
@@ -22,16 +36,16 @@ const ModalContent = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
-  height: 200px;
+  height: 210px;
   border-radius: 8px;
   overflow: hidden;
-   border: 2px solid black;
 `;
 
 const RoomImage = styled.img`
-  width: 100%;
+  width: 50%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 `;
 
 const RoomInfo = styled.div`
@@ -41,22 +55,24 @@ const RoomInfo = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 25px;
   padding: 0 20px;
+  font-family: 'Maple';
 `;
+
 const Subtitle = styled.div`
   font-size: 16px;
   color: #555;
   padding: 0 20px;
-`;
-const Thirdtitle = styled.div`
-  font-size: 17px;
-  color: #000;
-  padding: 0 20px;
-  font-weight: bold;
+  font-family: 'MapleL';
 `;
 
+const Thirdtitle = styled.div`
+  font-size: 20px;
+  color: #000;
+  padding: 0 20px;
+  font-family: 'Maple';
+`;
 
 const DetailsGrid = styled.div`
   display: grid;
@@ -78,13 +94,12 @@ const Detail = styled.div`
   }
 
   span {
-    font-weight: bold;
+    font-family: 'Maple';
   }
 `;
 
 const Line = styled.div`
-   border-bottom: 1px solid #ddd;
-  }
+  border-bottom: 2px solid #efddff;
 `;
 
 const OptionsContainer = styled.div`
@@ -99,29 +114,30 @@ const Option = styled.div`
   gap: 8px;
   padding: 0 20px;
   align-items: center;
-  
+
   img {
-    width: 45px;
-    height: 45px;
-    border: 2px solid black;
+    width: 60px;
+    height: 60px;
+    border: 7px solid efddff;
   }
-  span{
-     font-size: 13px;
-     font-weight: bold;
+
+  span {
+    font-size: 13px;
+    font-family: 'MapleL'; /* 옵션 텍스트에 Maplestory Light 적용 */
   }
 `;
 
 const CloseButton = styled.button`
-  background-color: #8271FF;
+  background-color: #f6d4ff;
   color: white;
-  border: 2px solid black;
   border-radius: 20px;
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
-  
+  font-family: 'Maple';
+
   &:hover {
-    background-color: #0056b3;
+   background-color: #e8b3f7;
   }
 `;
 
@@ -140,98 +156,102 @@ const RoomModal = ({ isOpen, onClose, room }) => {
         return FireIcon;
       case "에어컨":
         return AirIcon;
-        default:
+      default:
         return null; // 아이콘이 없을 경우
     }
   };
-  return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={onClose}
-      ariaHideApp={false}
-      contentLabel="Room Details"
-      style={{
-        overlay: {
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          zIndex: 1000,
-        },
-        content: {
-          top: "50%",
-          left: "50%",
-          right: "auto",
-          bottom: "auto",
-          marginRight: "-50%",
-          transform: "translate(-50%, -50%)",
-          width: "600px",
-          padding: "20px",
-          borderRadius: "10px",
-          border: "3px solid black",
-          //boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-          zIndex: 1001,
-        },
-      }}
-    >
-{room && (
-  <ModalContent>
-    <ImageContainer>
-      <RoomImage src={`/assets/${room.photo}`} alt={room.type} />
-    </ImageContainer>
-    <RoomInfo>
-      <Title>{room.price}</Title>
-      <Subtitle>{room.description}</Subtitle>
-    </RoomInfo>
-    <DetailsGrid>
-      <Detail>
-      <img src={HouseIcon} alt="방종류" /> {room.type}
-      </Detail>
-      <Detail>
-      <img src={RecipeIcon} alt="관리비" /> {room.maintenanceCost}
-      </Detail>
-      <Detail>
-      <img src={FloorIcon} alt="층수" /> {room.floor}
-      </Detail>
-      <Detail>
-      <img src={AreaIcon} alt="면적" /> {room.exclusiveArea}
-      </Detail>
-    </DetailsGrid>
-    <Line></Line>
-    <DetailsGrid>
-      <Detail>
-        <span>난방종류</span> {room.heat}
-      </Detail>
-      <Detail>
-        <span>방향</span> {room.direstion}
-      </Detail> 
-      <Detail>
-        <span>전용/공급면적</span> {room.allArea}
-      </Detail> 
-      <Detail>
-        <span>총 주차대수</span> {room.totalParking}
-      </Detail>
-      <Detail>
-        <span>방수/욕실수</span> {room.roomCount}
-      </Detail>
-      <Detail>
-        <span>입주 가능일</span> {room.movingIn}
-      </Detail>
-    </DetailsGrid>
-    <Line></Line>
-    <Thirdtitle>
-      <span>옵션</span>
-    </Thirdtitle>
-    <OptionsContainer>
-            {room.option && room.option.map((item, index) => (
-              <Option key={index}>
-                <img src={getOptionIcon(item)} alt={item} />
-                <span>{item}</span>
-              </Option>
-            ))}
-          </OptionsContainer>
 
-    <CloseButton onClick={onClose}>닫기</CloseButton>
-  </ModalContent>
-    )}
-    </Modal>
+  return (
+    <>
+      <GlobalStyle /> {/* 전역 스타일 적용 */}
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={onClose}
+        ariaHideApp={false}
+        contentLabel="Room Details"
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 1000,
+          },
+          content: {
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)",
+            width: "550px",
+            padding: "20px",
+            borderRadius: "25px",
+            border: "5px solid #efddff",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            zIndex: 1001,
+          },
+        }}
+      >
+        {room && (
+          <ModalContent>
+            <ImageContainer>
+              <RoomImage src={`/assets/${room.photo}`} alt={room.type} />
+            </ImageContainer>
+            <RoomInfo>
+              <Title>{room.price}</Title>
+              <Subtitle>{room.description}</Subtitle>
+            </RoomInfo>
+            <DetailsGrid>
+              <Detail>
+                <img src={HouseIcon} alt="방종류" /> {room.type}
+              </Detail>
+              <Detail>
+                <img src={RecipeIcon} alt="관리비" /> {room.maintenanceCost}
+              </Detail>
+              <Detail>
+                <img src={FloorIcon} alt="층수" /> {room.floor}
+              </Detail>
+              <Detail>
+                <img src={AreaIcon} alt="면적" /> {room.exclusiveArea}
+              </Detail>
+            </DetailsGrid>
+            <Line></Line>
+            <DetailsGrid>
+              <Detail>
+                <span>난방종류</span> {room.heat}
+              </Detail>
+              <Detail>
+                <span>방향</span> {room.direstion}
+              </Detail>
+              <Detail>
+                <span>전용/공급면적</span> {room.allArea}
+              </Detail>
+              <Detail>
+                <span>총 주차대수</span> {room.totalParking}
+              </Detail>
+              <Detail>
+                <span>방수/욕실수</span> {room.roomCount}
+              </Detail>
+              <Detail>
+                <span>입주 가능일</span> {room.movingIn}
+              </Detail>
+            </DetailsGrid>
+            <Line></Line>
+            <Thirdtitle>
+              <span>옵션</span>
+            </Thirdtitle>
+            <OptionsContainer>
+              {room.option &&
+                room.option.map((item, index) => (
+                  <Option key={index}>
+                    <img src={getOptionIcon(item)} alt={item} />
+                    <span>{item}</span>
+                  </Option>
+                ))}
+            </OptionsContainer>
+            <CloseButton onClick={onClose}>닫기</CloseButton>
+          </ModalContent>
+        )}
+      </Modal>
+    </>
   );
 };
 
