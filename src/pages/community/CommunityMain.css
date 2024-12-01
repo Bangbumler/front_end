@@ -1,7 +1,7 @@
 .community-main {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: linear-gradient(to bottom, #4d4dfd, #7575d7); /* 위에서 아래로 그라데이션 */
+  background: linear-gradient(to bottom, #afafff, #c7c7fa); /* 위에서 아래로 그라데이션 */
   padding: 20px;
   min-height: 800px; /* 최소 높이를 설정하여 공간이 부족하지 않도록 처리 */
   border: 4px solid #efddff;
@@ -60,6 +60,13 @@
    src: url('../../fonts/Maplestory Light.ttf') format('truetype'); /* 파일 경로와 형식 */
 }
 
+.card-header {
+  display: flex; /* Flexbox를 활성화 */
+  justify-content: space-between; /* 좌우로 배치 */
+  align-items: center; /* 세로 정렬 */
+  
+}
+
 .card h3 {
   margin: 8px 0 ; /* 제목 위아래 여백 줄임 */
   font-family: 'Maple';
@@ -71,7 +78,7 @@
 .card p {
   margin: 15px 0; /* 카드 내 텍스트 간 여백 줄임 */
   font-size: 15px; /* 글자 크기 줄임 */
-  font-family: 'Maple';
+  font-family: 'MapleL';
   color: #97929c;
   font-weight: bold;
   
@@ -80,7 +87,7 @@
 .card-id {
   font-size: 14px !important; /* 매물 번호 글자 크기 줄임 */
   color: #d495f8 !important;
-  margin-left: 230px;
+  text-align: right;
 }
 
 /* 검색 창 */

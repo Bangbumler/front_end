@@ -92,32 +92,32 @@ const CommunityMain = () => {
 
       {/* 카드 리스트 컨테이너 */}
       <div className="card-container">
-        {currentCards.length > 0 ? (
-          <div className="card-list">
-            {currentCards.map((card, index) => (
-              <div
-              className="card"
-              key={index}
-              onClick={() => handleCardClick(card.saleNumber)}
-              >
-              
-              <img
-                  src={`/assets/${card.photo}`}
-              />
-              <h3>
-                {card.price}
-                <span className="card-id">{card.saleNumber}</span>  
-              </h3>
-              <p>{card.type}</p>
-              <p>{card.description}</p>
-              
-          </div>
-        ))}
-          </div>
-        ) : (
-          <p className="no-results">검색 결과가 없습니다.</p>
-        )}
-      </div>
+  {currentCards.length > 0 ? (
+    <div className="card-list">
+      {currentCards.map((card, index) => (
+        <div
+          className="card"
+          key={index}
+          onClick={() => handleCardClick(card.saleNumber)}
+        >
+          <img src={`/assets/${card.photo}`} alt={`Card ${index}`} />
+          
+          {/* 가격과 판매 번호를 flex로 배치 */}
+          <h3 className="card-header">
+            <span className="card-price">{card.price}</span>
+            <span className="card-id">{card.saleNumber}</span>
+          </h3>
+          
+          <p>{card.type}</p>
+          <p>{card.description}</p>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <p className="no-results">검색 결과가 없습니다.</p>
+  )}
+</div>
+
 
       {/* 페이지네이션 */}
       {filteredCards.length > cardsPerPage && (
