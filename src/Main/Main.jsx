@@ -65,7 +65,7 @@ function Main() {
         <div ref={outerDivRef} style={{ overflow: "hidden", height: "100vh" }}>
             <FirstPage/>
             <SecondPage/>
-            <ThirdPage/>
+            {/* <ThirdPage/> */}
         </div>
     );
 }

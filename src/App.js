@@ -9,7 +9,9 @@ import CommunityMain from "./pages/community/CommunityMain";
 import CommunityDetail from "./pages/community/Communitydetail";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
+import Main from "./Main/Main";
 
+import styled from "styled-components";
 const App = () => {
   const location = useLocation();
 
@@ -32,7 +34,7 @@ const App = () => {
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Main />} />
           <Route
             path="/map"
             element={<MapLayout favorites={favorites} toggleFavorite={toggleFavorite} />}
@@ -51,5 +53,14 @@ const App = () => {
     </div>
   );
 };
+const Content = styled.div`
+  flex-grow: 1;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 
 export default App;
