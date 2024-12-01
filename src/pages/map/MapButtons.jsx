@@ -6,7 +6,7 @@ import heartIcon from "../../assets/icons/heart.png";
 
 const FloatingButtonContainer = styled.div`
   position: absolute;
-  bottom: 20px;
+  bottom: 100px;
   right: 20px;
   display: flex;
   flex-direction: column;
