@@ -18,14 +18,13 @@ const CardContainer = styled.div`
     display: flex;
     gap: 179px;
 `;
-
 const Card = styled.div`
-    
+    position: relative; /* 내부 요소 위치 제어 */
     width: 476px;
-    height : 583px;
+    height: 583px;
     background-color: white;
     border-radius: 20px;
-    padding: 0 20px 20px 20px; /* 상단 패딩을 제거하고 나머지 유지 */
+    padding: 0 20px 20px 20px; /* 상단 패딩 제거 */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -34,24 +33,30 @@ const Card = styled.div`
 `;
 
 const CardTitle = styled.div`
-    width:75%;
+    position: absolute;
+    top: -20px; /* 상단에서 카드 밖으로 살짝 나옴 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 10%;
     font-size: 24px;
     font-weight: bold;
-    color: #8271FF;
+    color: #ffffff;
     background: linear-gradient(0deg, rgba(236, 175, 255, 0.90) 0%, rgba(133, 132, 255, 0.90) 100%);
     padding: 8px 16px;
-    border-radius: 15px;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 상자 그림자 추가 */
 `;
 
 const CardDescription = styled.div`
     color: #000;
     font-family: "Golos Text", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 30px; /* 200% */
     text-align:left;
+    
 `;
 
 const CardButton = styled.button`
@@ -82,11 +87,11 @@ const MiniTitle = styled.div`
     font-family: "Golos Text", sans-serif;
     font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 900;
     line-height: normal;
     margin-right:150px;
-    margin-top : 30px;
-    margin-bottom: 30px;
+    margin-top : 100px;
+    margin-bottom: 10px;
 `;
 const SecondPage = () => {
     const navigate = useNavigate();

@@ -17,19 +17,19 @@ const PageContainer = styled.div`
 const ContentWrapper = styled.div`
     display: flex;
     align-items: center;
-    width: 1000px;
+    width: 1500px;
     height: 500px;
 `;
 
 const TextContainer = styled.div`
     max-width: 600px;
     margin-right: 20px;
+    margin-left: 180px;
 `;
 
 const Title = styled.div`
     color: #FFF;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #ECAFFF;
     font-family: 'Glory', sans-serif;
     font-size: 48px;
     font-style: normal;
@@ -53,13 +53,15 @@ const Description = styled.div`
       font-style: normal;
       font-weight: 600;
       line-height: normal;
+      margin-top: 40px;
 `;
 
 const LoginButton = styled.button`
     padding: 10px 20px;
     font-size: 16px;
-    border-radius: 5px;
-    background-color: white;
+    font-weight:bold;
+    border-radius: 10px;
+    background-color: #D9D9FF;
     color: #4a00e0;
     border: none;
     cursor: pointer;
@@ -71,8 +73,8 @@ const LoginButton = styled.button`
 `;
 
 const ImageSection = styled.div`
-    width: 250px;
-    height: 250px;
+    width: 700px;
+    height: 700px;
     background-image: url(${houseImg});
     background-size: contain;
     background-repeat: no-repeat;
