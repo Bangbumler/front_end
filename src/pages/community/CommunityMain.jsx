@@ -104,10 +104,13 @@ const CommunityMain = () => {
               <img
                   src={`/assets/${card.photo}`}
               />
-              <h3>{card.price}</h3>
+              <h3>
+                {card.price}
+                <span className="card-id">{card.saleNumber}</span>  
+              </h3>
               <p>{card.type}</p>
               <p>{card.description}</p>
-              <p className="card-id">{card.saleNumber}</p>
+              
           </div>
         ))}
           </div>
