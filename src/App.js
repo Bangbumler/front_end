@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/home';
-import MyPage from './pages/mypage';
-import MapLayout from './pages/map/MapLayout';
-import CommunityMain from './pages/community/CommunityMain';
-import CommunityDetail from './pages/community/Communitydetail';
-import Search from './pages/search';
+import React, { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/home";
+import MyPage from "./pages/mypage";
+import MapLayout from "./pages/map/MapLayout";
+import CommunityMain from "./pages/community/CommunityMain";
+import CommunityDetail from "./pages/community/Communitydetail";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
 
 const App = () => {
   const location = useLocation();
@@ -15,7 +16,6 @@ const App = () => {
   // 중앙에서 찜 상태 관리
   const [favorites, setFavorites] = useState([]);
 
-  // 찜 상태를 업데이트하는 함수
   const toggleFavorite = (id) => {
     setFavorites((prevFavorites) =>
       prevFavorites.includes(id)
@@ -24,7 +24,7 @@ const App = () => {
     );
   };
 
-  const hideFooterPaths = ['/mypage', '/community', '/community-detail'];
+  const hideFooterPaths = ["/mypage", "/community", "/community-detail", "/map"];
   const shouldHideFooter = hideFooterPaths.some((path) => location.pathname.startsWith(path));
 
   return (
@@ -43,7 +43,8 @@ const App = () => {
           />
           <Route path="/community" element={<CommunityMain />} />
           <Route path="/community-detail/:saleNumber" element={<CommunityDetail />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </main>
       {!shouldHideFooter && <Footer />}
@@ -51,10 +52,4 @@ const App = () => {
   );
 };
 
-const AppWrapper = () => (
-  <Router>
-    <App />
-  </Router>
-);
-
-export default AppWrapper;
+export default App;

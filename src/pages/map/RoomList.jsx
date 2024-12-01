@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import RoomModal from "./RoomModal"; // RoomModal 컴포넌트를 import
-
+import RoomModal from "./RoomModal";
+import hambuttonIcon from "../../assets/icons/hambutton.png";
 const ListContainer = styled.div`
-  width: 25%;
-  overflow-y: auto;
-  border-right: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  background-color: #f9f9f9;
-  padding: 16px;
+width: ${(props) => (props.isHidden ? "0" : "28%")};
+overflow-y: auto;
+border-right: ${(props) => (props.isHidden ? "none" : "1px solid #ddd")};
+display: ${(props) => (props.isHidden ? "none" : "flex")};
+flex-direction: column;
+background-color: #f9f9f9;
+padding: ${(props) => (props.isHidden ? "0" : "16px")};
+transition: all 0.3s ease;
+position: relative;
 `;
 
 const HeaderContainer = styled.div`
@@ -47,13 +49,36 @@ const HamburgerMenu = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative; /* 항상 화면에 고정 */
+  top: 105px;
+  // left: ${(props) => (props.isHidden ? "10px" : "270px")}; /* 숨김 상태에 따라 위치 변경 */
   cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
 
   span {
     display: block;
     width: 100%;
     height: 3px;
     background-color: #333;
+  }
+`;
+const HamburgerWrapper = styled.div`
+  position: absolute;
+  top: 105px;
+  left: ${(props) => (props.isHidden ? "10px" : "25%")};
+  z-index: 100;
+  cursor: pointer;
+  transition: all 0.3s ease;
+`;
+const HamburgerImage = styled.img`
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
   }
 `;
 
@@ -124,7 +149,11 @@ const RoomDetails = styled.div`
 const RoomList = ({ rooms,favorites, onToggleFavorite }) => {
   const [selectedRoom, setSelectedRoom] = useState(null); 
   const [isModalOpen, setModalOpen] = useState(false); // Modal 열림 여부
+  const [isHidden, setIsHidden] = useState(false);
 
+  const toggleHidden = () =>{
+    setIsHidden(!isHidden);
+  }
   const openModal = (room) => {
     setSelectedRoom(room); // 클릭된 방 데이터를 설정
     setModalOpen(true); // Modal 열기
@@ -137,17 +166,19 @@ const RoomList = ({ rooms,favorites, onToggleFavorite }) => {
 
   return (
     <>
-      <ListContainer>
+    
+    <HamburgerWrapper isHidden={isHidden} onClick={toggleHidden}>
+      <HamburgerImage
+        src={hambuttonIcon}
+         onClick={toggleHidden}
+      />
+    </HamburgerWrapper>
+      <ListContainer isHidden={isHidden}>
         <HeaderContainer>
           <ButtonGroup>
             <HeaderButton>월세</HeaderButton>
             <HeaderButton>전세</HeaderButton>
           </ButtonGroup>
-          <HamburgerMenu>
-            <span></span>
-            <span></span>
-            <span></span>
-          </HamburgerMenu>
         </HeaderContainer>
         {rooms.map((room) => (
           <ListItemContainer key={room.saleNumber} onClick={() => openModal(room)}>
