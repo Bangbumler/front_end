@@ -1,87 +1,101 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../assets/images/Logo.png'; 
+import { NavLink, useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import Logo from '../assets/images/Logo.png';
+import { Helmet } from 'react-helmet';
+
+const Header = styled.div`
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: #FFF;
+  color: var(--main, #5B59FC);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+`;
+
+const HeaderContent = styled.div`
+  width: 79%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const NavList = styled.div`
+  display: flex;
+  gap: 10rem; 
+`;
+
+const NavItem = styled(NavLink)`
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+
+  &.active {
+    font-weight: bold; 
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px; 
+      background-color: currentColor; 
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+  }
+`;
+
+const LogoImage = styled.img`
+  height: 40px; 
+  width: auto;
+`;
 
 function Navbar() {
   const navigate = useNavigate();
 
   const handleSearchClick = () => {
-    navigate('/map'); // Search 클릭 시 CommunityMain으로 이동
-  };
-
-  const handleCommunityClick = () => {
-    navigate('/community'); // Community 클릭 시 CommunityDetail로 바로 이동
-  };
-
-  const navbarStyle = {
-    background: '#FFFFFF', 
-    borderBottom: '1px solid #e0e0e0', 
-    padding: '1rem 2rem', // 높이 유지
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  };
-
-  const navListStyle = {
-    listStyle: 'none',
-    display: 'flex',
-    margin: 0,
-    padding: 0,
-    gap: '10rem', // 메뉴 간 간격을 살짝 넓힘
-  };
-
-  const navItemStyle = {
-    color: '#4A4A4A', 
-    textDecoration: 'none',
-    fontSize: '1.3rem', // 글자 크기 살짝 키움
-    fontWeight: '500',
-    cursor: 'pointer',
-  };
-
-  const loginStyle = {
-    color: '#4A4A4A',
-    textDecoration: 'none',
-    fontSize: '1rem', // 로그인/회원가입 크기도 살짝 키움
-  };
-
-  const logoStyle = {
-    height: '40px', // 로고 높이는 그대로 유지
-    width: 'auto', 
+    navigate('/map');
   };
 
   return (
-    <header style={navbarStyle}>
-      <div>
-        <Link to="/">
-          <img src={Logo} alt="방범러 로고" style={logoStyle} />
-        </Link>
-      </div>
-      
-      <nav>
-        <ul style={navListStyle}>
-          <li>
-            <Link to="/" style={navItemStyle}>Home</Link>
-          </li>
-          <li>
-            <span style={navItemStyle} onClick={handleSearchClick}>
-              Search
-            </span>
-          </li>
-          <li>
-            <span style={navItemStyle} onClick={handleCommunityClick}>
-              Community
-            </span>
-          </li>
-          <li>
-            <Link to="/mypage" style={navItemStyle}>MyPage</Link>
-          </li>
-        </ul>
-      </nav>
-      
-      <div>
-        <Link to="/login" style={loginStyle}>로그인/회원가입</Link>
-      </div>
-    </header>
+    <Header>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
+
+      <HeaderContent>
+        <NavItem to="/">
+          <LogoImage src={Logo} alt="방범러 로고" />
+        </NavItem>
+        <NavList>
+          <NavItem to="/" end>
+            Home
+          </NavItem>
+          <NavItem to="/map" onClick={handleSearchClick}>
+            Search
+          </NavItem>
+          <NavItem to="/community">
+            Community
+          </NavItem>
+          <NavItem to="/mypage">
+            MyPage
+          </NavItem>
+        </NavList>
+        <NavItem to="/login">로그인/회원가입</NavItem>
+      </HeaderContent>
+    </Header>
   );
 }
 
