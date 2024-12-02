@@ -21,14 +21,21 @@
         "totalParking": "총 50대",
         "movingIn": "2026.03.20",
         "option": ["신발장", "냉장고", "세탁기", "싱크대", "인덕션", "에어컨"],
-        "summary": "5층, 29.89m², 관리비 없음\n한성대입구역 10분 거리",
         "infrastructure": {
             "subway": "600m",
             "convenienceStore": "100m",
             "hospital": "800m",
             "publicSecurityFacility": "1.2km"
         },
-        "reviews": ["그럭저럭", "집주인분이 괜찮아요"]
+        "reviews": ["그럭저럭", "집주인분이 괜찮아요"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "안전",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 7
     },
     {
         "saleNumber": "0000002",
@@ -52,14 +59,21 @@
         "totalParking": "-",
         "movingIn": "2024.12.16 (협의가능)",
         "option": ["신발장", "냉장고", "세탁기", "싱크대", "인덕션", "에어컨"],
-        "summary": "5층, 23.14m², 관리비 8만\n성신여대입구역 5분 거리",
         "infrastructure": {
             "subway": "300m",
             "convenienceStore": "200m",
             "hospital": "1km",
             "publicSecurityFacility": "2km"
         },
-        "reviews": ["평타예요."]
+        "reviews": ["평타예요."],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "안전",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 5
     },
     {
         "saleNumber": "0000003",
@@ -83,20 +97,27 @@
         "totalParking": "총 8대",
         "movingIn": "2024.12.30 (협의 가능)",
         "option": ["신발장"],
-        "summary": "3층, 55.28m², 관리비 20만\n성신여대입구역 3분 거리",
         "infrastructure": {
             "subway": "100m",
             "convenienceStore": "50m",
             "hospital": "2km",
             "publicSecurityFacility": "1km"
         },
-        "reviews": ["오는 길에 오르막길 너무 힘들어요"]
+        "reviews": ["오는 길에 오르막길 너무 힘들어요"],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "주의",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 4
     },
     {
         "saleNumber": "0000004",
         "coordinate": {
-            "latitude": 37.595961107599784,
-            "longitude": 127.01464124528333
+            "latitude": 37.58938908556958,
+            "longitude": 127.00676517773786
         },
         "photo": "/images/rooms/4-1.jpg",
         "lease": "월세",
@@ -114,20 +135,27 @@
         "totalParking": "-",
         "movingIn": "즉시 입주 (협의 가능)",
         "option": ["싱크대"],
-        "summary": "2층, 82.64m², 관리비 없음\n성신여대입구역 20분 거리",
         "infrastructure": {
             "subway": "900m",
             "convenienceStore": "70m",
             "hospital": "700m",
             "publicSecurityFacility": "900m"
         },
-        "reviews": ["최악! 오지 마세요.", "나쁘지 않았어요"]
+        "reviews": ["최악! 오지 마세요.", "나쁘지 않았어요"],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "주의",
+            "살인": "주의",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 8
     },
     {
         "saleNumber": "0000005",
         "coordinate": {
-            "latitude": 37.59265475668677,
-            "longitude": 127.01209292974322
+            "latitude": 37.591035211518935,
+            "longitude": 127.01220872559863
         },
         "photo": "/images/rooms/5-1.jpg",
         "lease": "월세",
@@ -145,14 +173,21 @@
         "totalParking": "-",
         "movingIn": "즉시 입주 (협의 가능)",
         "option": ["신발장", "냉장고", "세탁기", "싱크대"],
-        "summary": "반지층, 23.14m², 관리비 없음\n한성대입구역 20분 거리",
         "infrastructure": {
             "subway": "700m",
             "convenienceStore": "300m",
             "hospital": "800m",
             "publicSecurityFacility": "700m"
         },
-        "reviews": ["설명이랑 달라요."]
+        "reviews": ["설명이랑 달라요."],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "주의",
+            "살인": "주의",
+            "폭행": "주의",
+            "절도": "안전"
+        },
+        "cctv": 10
     },
     {
         "saleNumber": "0000006",
@@ -176,14 +211,21 @@
         "totalParking": "-",
         "movingIn": "즉시 입주",
         "option": ["신발장", "냉장고", "세탁기", "싱크대", "인덕션", "에어컨"],
-        "summary": "1층, 42.97m², 관리비 5만원\n보문역 16분 거리",
         "infrastructure": {
             "subway": "1km",
             "convenienceStore": "700m",
             "hospital": "300m",
             "publicSecurityFacility": "100m"
         },
-        "reviews": ["좋네요", "음...", "벌레 많아요"]
+        "reviews": ["좋네요", "음...", "벌레 많아요"],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "주의",
+            "살인": "주의",
+            "폭행": "주의",
+            "절도": "주의"
+        },
+        "cctv": 9
     },
     {
         "saleNumber": "0000007",
@@ -207,14 +249,21 @@
         "totalParking": "총 1대",
         "movingIn": "2025.03.01",
         "option": ["신발장", "냉장고", "세탁기", "싱크대", "인덕션", "에어컨"],
-        "summary": "2층, 23.14m², 관리비 6만원\n한성대입구역 5분 거리",
         "infrastructure": {
             "subway": "300m",
             "convenienceStore": "50m",
             "hospital": "1.5km",
             "publicSecurityFacility": "1.5km"
         },
-        "reviews": ["여기 사는 사람은 축복 받은 거예요."]
+        "reviews": ["여기 사는 사람은 축복 받은 거예요."],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "주의",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 7
     },
     {
         "saleNumber": "0000008",
@@ -238,13 +287,894 @@
         "totalParking": "-",
         "movingIn": "즉시 입주 (협의 가능)",
         "option": [],
-        "summary": "1층, 37m², 관리비 3만원\n한성대입구역 15분 거리",
         "infrastructure": {
             "subway": "900m",
             "convenienceStore": "10m",
             "hospital": "400m",
             "publicSecurityFacility": "1km"
         },
-        "reviews": ["나름... 괜찮았어요", "좋아요"]
+        "reviews": ["나름... 괜찮았어요", "좋아요"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "주의",
+            "살인": "주의",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 6
+    },
+    {
+        "saleNumber": "0000009",
+        "coordinate": {
+            "latitude": 37.59420547871506,
+            "longitude": 127.02093094044622
+        },
+        "photo": "/images/rooms/9-1.jpg",
+        "lease": "월세",
+        "price": "1억/30",
+        "description": "한성대입구역 1분 거리에 있어요",
+        "type": "원룸(분리형)",
+        "exclusiveArea": "39.66m²",
+        "floor": "중층/2층",
+        "maintenanceCost": "3만원",
+        "parkingAvailable": "불가능",
+        "allArea": "39.66m² / 39.66m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "남",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주 (협의 가능)",
+        "option": [],
+        "infrastructure": {
+            "subway": "100m",
+            "convenienceStore": "20m",
+            "hospital": "300m",
+            "publicSecurityFacility": "2km"
+        },
+        "reviews": ["방범 시스템이 좋지 않아요", "혼자 살기 괜찮아요"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "주의",
+            "살인": "주의",
+            "폭행": "주의",
+            "절도": "안전"
+        },
+        "cctv": 5
+    },
+    {
+        "saleNumber": "0000010",
+        "coordinate": {
+            "latitude": 37.59214680706091,
+            "longitude": 127.02038969583582
+        },
+        "photo": "/images/rooms/10-1.jpg",
+        "lease": "월세",
+        "price": "3000/45",
+        "description": "신축급 풀옵션, 관리 잘 된 집",
+        "type": "원룸",
+        "exclusiveArea": "23m²",
+        "floor": "5층/5층",
+        "maintenanceCost": "10만원",
+        "parkingAvailable": "불가능",
+        "allArea": "23m² / 95.22m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "남",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "2025.01.10 (협의 가능)",
+        "option": ["신발장", "냉장고", "세탁기", "싱크대", "인덕션", "에어컨"],
+        "infrastructure": {
+            "subway": "200m",
+            "convenienceStore": "30m",
+            "hospital": "400m",
+            "publicSecurityFacility": "1.9km"
+        },
+        "reviews": ["흠... 말을 아끼겠습니다."],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "주의",
+            "살인": "주의",
+            "폭행": "주의",
+            "절도": "주의"
+        },
+        "cctv": 8
+    },
+    {
+        "saleNumber": "0000011",
+        "coordinate": {
+            "latitude": 37.5952712387544,
+            "longitude": 127.01893266517425
+        },
+        "photo": "/images/rooms/11-1.jpg",
+        "lease": "월세",
+        "price": "1000/90",
+        "description": "O복층의 롤모델O오렌지카운티남산O",
+        "type": "오피스텔(복층)",
+        "exclusiveArea": "18.49m²",
+        "floor": "2층/13층",
+        "maintenanceCost": "12만원",
+        "parkingAvailable": "가능",
+        "allArea": "18.49m² / 32.65m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "북서",
+        "heat": "개별난방",
+        "totalParking": "총 72대",
+        "movingIn": "2025.01.05 (협의 가능)",
+        "option": ["신발장", "냉장고", "세탁기", "싱크대", "인덕션", "에어컨"],
+        "infrastructure": {
+            "subway": "300m",
+            "convenienceStore": "40m",
+            "hospital": "500m",
+            "publicSecurityFacility": "1.8km"
+        },
+        "reviews": ["음...^^;;", "좀 으슥해요"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "안전",
+            "살인": "주의",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 9
+    },
+    {
+        "saleNumber": "0000012",
+        "coordinate": {
+            "latitude": 37.596313676883085,
+            "longitude": 127.0216081114017
+        },
+        "photo": "/images/rooms/12-1.jpg",
+        "lease": "월세",
+        "price": "5000/110",
+        "description": "신축급 투룸 단독주택 채광 좋은 월세",
+        "type": "투룸",
+        "exclusiveArea": "39.66m²",
+        "floor": "중층/5층",
+        "maintenanceCost": "10만원",
+        "parkingAvailable": "불가능",
+        "allArea": "39.66m² / 39.66m²",
+        "roomCount": "2개 / 1개",
+        "direstion": "남서",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주",
+        "option": ["신발장", "냉장고", "세탁기", "에어컨"],
+        "infrastructure": {
+            "subway": "400m",
+            "convenienceStore": "50m",
+            "hospital": "600m",
+            "publicSecurityFacility": "1.7km"
+        },
+        "reviews": ["꽤 괜찮아요"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "안전",
+            "살인": "주의",
+            "폭행": "주의",
+            "절도": "안전"
+        },
+        "cctv": 10
+    },
+    {
+        "saleNumber": "0000013",
+        "coordinate": {
+            "latitude": 37.59632972909191,
+            "longitude": 127.0199916829076
+        },
+        "photo": "/images/rooms/13-1.jpg",
+        "lease": "월세",
+        "price": "1000/58",
+        "description": "단기계약O1학기만가능O엘베있는건물O",
+        "type": "원룸",
+        "exclusiveArea": "16.52m²",
+        "floor": "5층/6층",
+        "maintenanceCost": "7만원",
+        "parkingAvailable": "불가능",
+        "allArea": "16.52m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "동",
+        "heat": "중앙난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주",
+        "option": ["신발장", "냉장고", "세탁기", "에어컨", "싱크대", "인덕션"],
+        "infrastructure": {
+            "subway": "500m",
+            "convenienceStore": "60m",
+            "hospital": "700m",
+            "publicSecurityFacility": "1.6km"
+        },
+        "reviews": ["월세 계속 올라요 ㅋㅋ"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "안전",
+            "살인": "주의",
+            "폭행": "주의",
+            "절도": "주의"
+        },
+        "cctv": 11
+    },
+    {
+        "saleNumber": "0000014",
+        "coordinate": {
+            "latitude": 37.597134671486145,
+            "longitude": 127.01445746597149
+        },
+        "photo": "/images/rooms/14-1.jpg",
+        "lease": "월세",
+        "price": "1000/72",
+        "description": "Winner.뉴리모델링, 신축급, 창문2개, 남향",
+        "type": "원룸",
+        "exclusiveArea": "28m²",
+        "floor": "3층/5층",
+        "maintenanceCost": "10만원",
+        "parkingAvailable": "불가능",
+        "allArea": "28m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "남",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주",
+        "option": ["신발장", "냉장고", "세탁기", "에어컨", "싱크대", "인덕션"],
+        "infrastructure": {
+            "subway": "600m",
+            "convenienceStore": "70m",
+            "hospital": "800m",
+            "publicSecurityFacility": "1.5km"
+        },
+        "reviews": ["집주인 별로"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "안전",
+            "살인": "안전",
+            "폭행": "주의",
+            "절도": "안전"
+        },
+        "cctv": 12
+    },
+    {
+        "saleNumber": "0000014",
+        "coordinate": {
+            "latitude": 37.59670914741391,
+            "longitude": 127.01277300078875
+        },
+        "photo": "/images/rooms/14-1.jpg",
+        "lease": "월세",
+        "price": "1000/72",
+        "description": "Winner.뉴리모델링, 신축급, 창문2개, 남향",
+        "type": "원룸",
+        "exclusiveArea": "28m²",
+        "floor": "3층/5층",
+        "maintenanceCost": "10만원",
+        "parkingAvailable": "불가능",
+        "allArea": "28m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "남",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "2025.02.04",
+        "option": ["신발장", "냉장고", "세탁기", "에어컨", "싱크대", "인덕션"],
+        "infrastructure": {
+            "subway": "700m",
+            "convenienceStore": "80m",
+            "hospital": "900m",
+            "publicSecurityFacility": "1.4km"
+        },
+        "reviews": ["방음 안 돼요"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "안전",
+            "살인": "안전",
+            "폭행": "주의",
+            "절도": "주의"
+        },
+        "cctv": 13
+    },
+    {
+        "saleNumber": "0000015",
+        "coordinate": {
+            "latitude": 37.59541816258959,
+            "longitude": 127.01540829834298
+        },
+        "photo": "/images/rooms/15-1.jpg",
+        "lease": "월세",
+        "price": "1000/48",
+        "description": "초역세권 풀옵션 원룸, 엘리베이터 있음",
+        "type": "원룸",
+        "exclusiveArea": "19.83m²",
+        "floor": "2층/7층",
+        "maintenanceCost": "7만원",
+        "parkingAvailable": "불가능",
+        "allArea": "19.83m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "북서",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "2025.01.15 (협의 가능)",
+        "option": ["냉장고", "세탁기", "에어컨", "싱크대", "인덕션"],
+        "infrastructure": {
+            "subway": "800m",
+            "convenienceStore": "90m",
+            "hospital": "1km",
+            "publicSecurityFacility": "1.3km"
+        },
+        "reviews": ["급히 계약한 것치곤 괜찮았어요."],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "안전",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "주의"
+        },
+        "cctv": 14
+    },
+    {
+        "saleNumber": "0000016",
+        "coordinate": {
+            "latitude": 37.59367481027338,
+            "longitude": 127.0148899060404
+        },
+        "photo": "/images/rooms/16-1.jpg",
+        "lease": "월세",
+        "price": "300/38",
+        "description": "Winner. 법후가성비, 남향, 넓은방, 깔끔",
+        "type": "원룸",
+        "exclusiveArea": "24m²",
+        "floor": "4층/4층",
+        "maintenanceCost": "7만원",
+        "parkingAvailable": "불가능",
+        "allArea": "24m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "남동",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "2024.12.18",
+        "option": ["냉장고", "세탁기", "에어컨", "싱크대", "인덕션", "신발장"],
+        "infrastructure": {
+            "subway": "900m",
+            "convenienceStore": "100m",
+            "hospital": "50m",
+            "publicSecurityFacility": "1.2km"
+        },
+        "reviews": ["가성비 레전드"],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "안전",
+            "살인": "주의",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 3
+    },
+    {
+        "saleNumber": "0000017",
+        "coordinate": {
+            "latitude": 37.594512621986986,
+            "longitude": 127.0157421474856
+        },
+        "photo": "/images/rooms/17-1.jpg",
+        "lease": "월세",
+        "price": "300/35",
+        "description": "V.옥탑층방2 V.도배교체 V.즉입가능",
+        "type": "투룸",
+        "exclusiveArea": "29.75m²",
+        "floor": "옥탑/2층",
+        "maintenanceCost": "없음",
+        "parkingAvailable": "불가능",
+        "allArea": "29.75m²",
+        "roomCount": "2개 / 1개",
+        "direstion": "동",
+        "heat": "중앙난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주 (협의 가능)",
+        "option": ["냉장고", "에어컨", "싱크대"],
+        "infrastructure": {
+            "subway": "1km",
+            "convenienceStore": "150m",
+            "hospital": "150m",
+            "publicSecurityFacility": "1.1km"
+        },
+        "reviews": ["여름에 덥고, 겨울에 추워요"],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "안전",
+            "살인": "안전",
+            "폭행": "주의",
+            "절도": "안전"
+        },
+        "cctv": 4
+    },
+    {
+        "saleNumber": "0000018",
+        "coordinate": {
+            "latitude": 37.592979195025904,
+            "longitude": 127.01127206350601
+        },
+        "photo": "/images/rooms/18-1.jpg",
+        "lease": "월세",
+        "price": "6000/10",
+        "description": "반전세, 풀옵션 원룸",
+        "type": "원룸",
+        "exclusiveArea": "19.83m²",
+        "floor": "3층/5층",
+        "maintenanceCost": "6만원",
+        "parkingAvailable": "불가능",
+        "allArea": "19.83m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "서",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주",
+        "option": ["냉장고", "에어컨", "싱크대", "세탁기", "신발장", "인덕션"],
+        "infrastructure": {
+            "subway": "10m",
+            "convenienceStore": "250m",
+            "hospital": "950m",
+            "publicSecurityFacility": "1km"
+        },
+        "reviews": ["매일 경찰차 소리 들려요"],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "안전",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "주의"
+        },
+        "cctv": 5
+    },
+    {
+        "saleNumber": "0000019",
+        "coordinate": {
+            "latitude": 37.59187772719498,
+            "longitude": 127.01132568091504
+        },
+        "photo": "/images/rooms/19-1.jpg",
+        "lease": "월세",
+        "price": "1000/50",
+        "description": "국민대원룸 도시형생활주택",
+        "type": "원룸",
+        "exclusiveArea": "14.07m²",
+        "floor": "3층/5층",
+        "maintenanceCost": "7만원",
+        "parkingAvailable": "불가능",
+        "allArea": "14.07m² / 24.12m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "남",
+        "heat": "중앙난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주",
+        "option": ["냉장고", "에어컨", "싱크대", "세탁기", "신발장", "인덕션"],
+        "infrastructure": {
+            "subway": "20m",
+            "convenienceStore": "350m",
+            "hospital": "850m",
+            "publicSecurityFacility": "900m"
+        },
+        "reviews": ["환기 잘 안 돼요"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "주의",
+            "살인": "안전",
+            "폭행": "주의",
+            "절도": "안전"
+        },
+        "cctv": 6
+    },
+    {
+        "saleNumber": "0000020",
+        "coordinate": {
+            "latitude": 37.59090253409153,
+            "longitude": 127.00986773519912
+        },
+        "photo": "/images/rooms/20-1.jpg",
+        "lease": "월세",
+        "price": "1000/50",
+        "description": "국민대원룸 도시형생활주택",
+        "type": "원룸",
+        "exclusiveArea": "14.07m²",
+        "floor": "3층/5층",
+        "maintenanceCost": "7만원",
+        "parkingAvailable": "불가능",
+        "allArea": "14.07m² / 24.12m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "남",
+        "heat": "중앙난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주",
+        "option": ["냉장고", "에어컨", "싱크대", "세탁기", "신발장", "인덕션"],
+        "infrastructure": {
+            "subway": "30m",
+            "convenienceStore": "450m",
+            "hospital": "750m",
+            "publicSecurityFacility": "800m"
+        },
+        "reviews": ["보안시설 괜찮아요"],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "주의",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "주의"
+        },
+        "cctv": 7
+    },
+    {
+        "saleNumber": "0000021",
+        "coordinate": {
+            "latitude": 37.59253975559981,
+            "longitude": 127.013253513556
+        },
+        "photo": "/images/rooms/21-1.jpg",
+        "lease": "월세",
+        "price": "170/115",
+        "description": "O단기오피스텔O큰길가안전O빠른입주가능O",
+        "type": "오피스텔",
+        "exclusiveArea": "18.57m²",
+        "floor": "10층/14층",
+        "maintenanceCost": "10만원",
+        "parkingAvailable": "가능",
+        "allArea": "18.57m² / 37.05m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "북",
+        "heat": "개별난방",
+        "totalParking": "총 47대",
+        "movingIn": "즉시 입주",
+        "option": ["냉장고", "에어컨", "싱크대", "세탁기", "신발장", "인덕션"],
+        "infrastructure": {
+            "subway": "40m",
+            "convenienceStore": "550m",
+            "hospital": "650m",
+            "publicSecurityFacility": "700m"
+        },
+        "reviews": ["방범 좋은데, 단기로만 사세요..."],
+        "safety": {
+            "성폭력": "안전",
+            "강도": "안전",
+            "살인": "주의",
+            "폭행": "안전",
+            "절도": "주의"
+        },
+        "cctv": 8
+    },
+    {
+        "saleNumber": "0000022",
+        "coordinate": {
+            "latitude": 37.58966812244427,
+            "longitude": 127.01047332680227
+        },
+        "photo": "/images/rooms/22-1.jpg",
+        "lease": "월세",
+        "price": "500/62",
+        "description": "w선착순 갓성비w신축급 깔끄미w풀옵션",
+        "type": "원룸",
+        "exclusiveArea": "19.83m²",
+        "floor": "1층/6층",
+        "maintenanceCost": "8만원",
+        "parkingAvailable": "불가능",
+        "allArea": "19.83m² / 20m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "동",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "2024.12.29",
+        "option": ["냉장고", "에어컨", "싱크대", "세탁기", "신발장", "인덕션"],
+        "infrastructure": {
+            "subway": "50m",
+            "convenienceStore": "650m",
+            "hospital": "550m",
+            "publicSecurityFacility": "600m"
+        },
+        "reviews": ["집주인은 신이야."],
+        "safety": {
+            "성폭력": "위험",
+            "강도": "안전",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 9
+    },
+    {
+        "saleNumber": "0000023",
+        "coordinate": {
+            "latitude": 37.59007773496448,
+            "longitude": 127.01377391553042
+        },
+        "photo": "/images/rooms/23-1.jpg",
+        "lease": "월세",
+        "price": "3000/100",
+        "description": "반려O 멋진뷰O 주차X 엘베X 채광굿 베란다 넓은투룸",
+        "type": "투룸",
+        "exclusiveArea": "39.78m²",
+        "floor": "4층/4층",
+        "maintenanceCost": "5만원",
+        "parkingAvailable": "불가능",
+        "allArea": "39.78m²",
+        "roomCount": "2개 / 1개",
+        "direstion": "남",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주 (협의 가능)",
+        "option": ["싱크대", "신발장"],
+        "infrastructure": {
+            "subway": "60m",
+            "convenienceStore": "750m",
+            "hospital": "450m",
+            "publicSecurityFacility": "500m"
+        },
+        "reviews": ["다른 방 알아보세요... 도망쳐"],
+        "safety": {
+            "성폭력": "위험",
+            "강도": "위험",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 10
+    },
+    {
+        "saleNumber": "0000024",
+        "coordinate": {
+            "latitude": 37.59148972093617,
+            "longitude": 127.01628217403122
+        },
+        "photo": "/images/rooms/24-1.jpg",
+        "lease": "월세",
+        "price": "1000/65",
+        "description": "남향-채광좋음/깔끔한 집/조용한 집/보안시설/엘리베이터 3000/55 가능",
+        "type": "원룸",
+        "exclusiveArea": "19.83m²",
+        "floor": "중층/4층",
+        "maintenanceCost": "5만원",
+        "parkingAvailable": "가능",
+        "allArea": "19.83m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "남",
+        "heat": "개별난방",
+        "totalParking": "총 8대",
+        "movingIn": "2025.02.20 (협의 가능)",
+        "option": ["에어컨", "신발장", "냉장고", "세탁기", "인덕션"],
+        "infrastructure": {
+            "subway": "70m",
+            "convenienceStore": "850m",
+            "hospital": "350m",
+            "publicSecurityFacility": "400m"
+        },
+        "reviews": ["소문 흉흉해요. 안전한 곳으로 가세요..."],
+        "safety": {
+            "성폭력": "위험",
+            "강도": "위험",
+            "살인": "위험",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 11
+    },
+    {
+        "saleNumber": "0000025",
+        "coordinate": {
+            "latitude": 37.591933701770074,
+            "longitude": 127.0144196605175
+        },
+        "photo": "/images/rooms/25-1.jpg",
+        "lease": "월세",
+        "price": "1000/50",
+        "description": "여성 전용, 베란다, 풀옵션",
+        "type": "원룸",
+        "exclusiveArea": "24m²",
+        "floor": "4층/5층",
+        "maintenanceCost": "5만원",
+        "parkingAvailable": "불가능",
+        "allArea": "24m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "북서",
+        "heat": "개별난방",
+        "totalParking": "총 8대",
+        "movingIn": "2025.01.28",
+        "option": ["에어컨", "신발장", "냉장고", "세탁기", "싱크대", "인덕션"],
+        "infrastructure": {
+            "subway": "80m",
+            "convenienceStore": "950m",
+            "hospital": "250m",
+            "publicSecurityFacility": "300m"
+        },
+        "reviews": ["집 안만 안전해요"],
+        "safety": {
+            "성폭력": "위험",
+            "강도": "위험",
+            "살인": "위험",
+            "폭행": "위험",
+            "절도": "안전"
+        },
+        "cctv": 12
+    },
+    {
+        "saleNumber": "0000026",
+        "coordinate": {
+            "latitude": 37.58865582764322,
+            "longitude": 127.01814974642105
+        },
+        "photo": "/images/rooms/26-1.jpg",
+        "lease": "전세",
+        "price": "2억9000",
+        "description": "협의입주가능 일반대출가능 보증금반환보험불가",
+        "type": "투룸",
+        "exclusiveArea": "42.97m²",
+        "floor": "4층/6층",
+        "maintenanceCost": "5만원",
+        "parkingAvailable": "불가능",
+        "allArea": "42.97m² / 204.9m²",
+        "roomCount": "2개 / 1개",
+        "direstion": "남",
+        "heat": "중앙난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주",
+        "option": ["에어컨", "신발장", "냉장고", "세탁기", "싱크대", "인덕션"],
+        "infrastructure": {
+            "subway": "90m",
+            "convenienceStore": "10m",
+            "hospital": "150m",
+            "publicSecurityFacility": "200m"
+        },
+        "reviews": ["방 별로예요", "범죄와 관련해 뉴스에 자주 나오는 건물"],
+        "safety": {
+            "성폭력": "위험",
+            "강도": "위험",
+            "살인": "위험",
+            "폭행": "위험",
+            "절도": "위험"
+        },
+        "cctv": 1
+    },
+    {
+        "saleNumber": "0000027",
+        "coordinate": {
+            "latitude": 37.58737913585006,
+            "longitude": 127.01481788830577
+        },
+        "photo": "/images/rooms/27-1.jpg",
+        "lease": "전세",
+        "price": "1억2000",
+        "description": "올수리된 반지층 방2개 풀옵션 1월 입주협의 LH SH 전세 가능",
+        "type": "투룸",
+        "exclusiveArea": "29.75m²",
+        "floor": "반지층/2층",
+        "maintenanceCost": "없음",
+        "parkingAvailable": "불가능",
+        "allArea": "29.75m² / 33.05m²",
+        "roomCount": "2개 / 1개",
+        "direstion": "동",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주",
+        "option": ["에어컨", "신발장", "냉장고", "세탁기", "싱크대"],
+        "infrastructure": {
+            "subway": "100m",
+            "convenienceStore": "250m",
+            "hospital": "2km",
+            "publicSecurityFacility": "100m"
+        },
+        "reviews": ["누가 가끔 쳐다보는 게 느껴져서 나왔어요"],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "위험",
+            "살인": "안전",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 2
+    },
+    {
+        "saleNumber": "0000028",
+        "coordinate": {
+            "latitude": 37.59047389786507,
+            "longitude": 127.01594793492839
+        },
+        "photo": "/images/rooms/28-1.jpg",
+        "lease": "전세",
+        "price": "6500",
+        "description": "계단올라가는 1층, 방2, 화1",
+        "type": "투룸",
+        "exclusiveArea": "43m²",
+        "floor": "1층/4층",
+        "maintenanceCost": "없음",
+        "parkingAvailable": "불가능",
+        "allArea": "43m²",
+        "roomCount": "2개 / 1개",
+        "direstion": "동",
+        "heat": "중앙난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주",
+        "option": [],
+        "infrastructure": {
+            "subway": "150m",
+            "convenienceStore": "350m",
+            "hospital": "1.9km",
+            "publicSecurityFacility": "900m"
+        },
+        "reviews": ["생각보다 괜찮아요"],
+        "safety": {
+            "성폭력": "주의",
+            "강도": "주의",
+            "살인": "위험",
+            "폭행": "안전",
+            "절도": "안전"
+        },
+        "cctv": 3
+    },
+    {
+        "saleNumber": "0000029",
+        "coordinate": {
+            "latitude": 37.588399603159395,
+            "longitude": 127.01405666436642
+        },
+        "photo": "/images/rooms/29-1.jpg",
+        "lease": "전세",
+        "price": "4000",
+        "description": "엘베유 풀옵션 원룸입니다.",
+        "type": "원룸",
+        "exclusiveArea": "19.83m²",
+        "floor": "1층/5층",
+        "maintenanceCost": "10만원",
+        "parkingAvailable": "가능",
+        "allArea": "19.83m² / 135.27m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "남",
+        "heat": "개별난방",
+        "totalParking": "총 10대",
+        "movingIn": "즉시 입주",
+        "option": ["에어컨", "신발장", "냉장고", "세탁기", "인덕션"],
+        "infrastructure": {
+            "subway": "200m",
+            "convenienceStore": "450m",
+            "hospital": "1.8km",
+            "publicSecurityFacility": "800m"
+        },
+        "reviews": ["둔감한 사람만 살 수 있을 거 같아요"],
+        "safety": {
+            "성폭력": "위험",
+            "강도": "주의",
+            "살인": "주의",
+            "폭행": "위험",
+            "절도": "안전"
+        },
+        "cctv": 5
+    },
+    {
+        "saleNumber": "0000030",
+        "coordinate": {
+            "latitude": 37.589159171169236,
+            "longitude": 127.00915702202975
+        },
+        "photo": "/images/rooms/30-1.jpg",
+        "lease": "전세",
+        "price": "1억",
+        "description": "방 넓은 신축 원룸 사진은 2ㄴ년 전 사진.인기 매물",
+        "type": "원룸",
+        "exclusiveArea": "19.83m²",
+        "floor": "3층/5층",
+        "maintenanceCost": "7만원",
+        "parkingAvailable": "불가능",
+        "allArea": "19.83m² / 21.31m²",
+        "roomCount": "1개 / 1개",
+        "direstion": "동",
+        "heat": "개별난방",
+        "totalParking": "-",
+        "movingIn": "즉시 입주 (협의 가능)",
+        "option": ["에어컨", "신발장", "냉장고", "세탁기", "싱크대", "인덕션"],
+        "infrastructure": {
+            "subway": "300m",
+            "convenienceStore": "550m",
+            "hospital": "1.7km",
+            "publicSecurityFacility": "700m"
+        },
+        "reviews": ["인기 매물이라는데 거주자가 자주 바뀌는 걸 인기 매물이라고 한 건지..."],
+        "safety": {
+            "성폭력": "위험",
+            "강도": "위험",
+            "살인": "주의",
+            "폭행": "안전",
+            "절도": "위험"
+        },
+        "cctv": 8
     }
 ]
