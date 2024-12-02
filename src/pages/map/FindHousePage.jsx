@@ -6,6 +6,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh; /* 화면 전체 높이 */
+  border: 4px solid #efddff;
 `;
 
 const MapContainer = styled.div`
