@@ -138,29 +138,36 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    background: "linear-gradient(180deg, #8874FF 0%, #F7C3FF 100%)",
+    background: "linear-gradient(to Bottom, #afafff 0%, #c7c7fa 100%)",
+    border: "4px solid #efddff",
+    fontFamily: "'MapleL', sans-serif", // 기본 폰트 설정
   },
   signupBox: {
     width: "100%",
     maxWidth: "700px",
     backgroundColor: "#FFFFFF",
     padding: "50px",
-    borderRadius: "12px",
+    borderRadius: "30px",
     boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)",
     textAlign: "center",
-  },
+    border: "9px solid #efddff",
+    fontFamily: "MapleL",
+    },
   title: {
-    fontSize: "28px",
+    fontSize: "32px",
     marginBottom: "20px",
+    fontFamily: "'Maple', sans-serif", // Bold 폰트 적용
   },
   inputGroup: {
     marginBottom: "20px",
   },
   input: {
-    width: "100%",
+    width: "95%",
     padding: "12px",
     borderRadius: "6px",
     border: "1px solid #DDD",
+    fontFamily: "MapleL",
+    fontSize: "17px",
   },
   agreementGroup: {
     display: "flex",
@@ -171,16 +178,19 @@ const styles = {
   agreementText: {
     fontSize: "14px",
     marginLeft: "10px",
+    fontFamily: "'MapleL', sans-serif", // Light 폰트 적용
   },
   button: {
     width: "100%",
     padding: "12px",
-    backgroundColor: "#6A5ACD",
+    backgroundColor: "#f6d4ff",
     color: "#FFFFFF",
     borderRadius: "6px",
     border: "none",
     marginTop: "10px",
+    marginBottom: "20px",
     fontSize: "16px",
+    fontFamily: "Maple",
   },
   linkText: {
     fontSize: "14px",
@@ -188,13 +198,29 @@ const styles = {
     textDecoration: "underline",
     cursor: "pointer",
     marginTop: "10px",
+    fontFamily: "'MapleL', sans-serif", // Light 폰트 적용
   },
   error: {
     fontSize: "12px",
     color: "red",
     marginTop: "5px",
     textAlign: "left",
+    fontFamily: "'MapleL', sans-serif",
   },
 };
+
+// 전역 폰트 설정
+const fontStyle = document.createElement("style");
+fontStyle.innerHTML = `
+  @font-face {
+    font-family: 'Maple';
+    src: url('../../fonts/Maplestory Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'MapleL';
+    src: url('../../fonts/Maplestory Light.ttf') format('truetype');
+  }
+`;
+document.head.appendChild(fontStyle);
 
 export default Signup;
