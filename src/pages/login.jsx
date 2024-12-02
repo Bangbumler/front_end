@@ -22,7 +22,7 @@ const Login = () => {
         <input
           style={styles.input}
           type="email"
-          placeholder="0000@abcd.com"
+          placeholder="E-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -32,7 +32,6 @@ const Login = () => {
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="00000"
         />
         <button style={styles.button} onClick={handleLogin}>
           로그인하기
@@ -43,11 +42,6 @@ const Login = () => {
         >
           *서비스가 처음이라면, 회원가입을 해주세요.
         </p>
-        <button
-          style={styles.googleButton}
-        >
-          구글로 로그인하기
-        </button>
       </div>
     </div>
   );
