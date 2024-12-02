@@ -12,10 +12,11 @@ import Signup from "./pages/signup";
 import Main from "./Main/Main";
 
 import styled from "styled-components";
+
 const App = () => {
   const location = useLocation();
 
-  // 중앙에서 찜 상태 관리
+  // 찜 상태 관리
   const [favorites, setFavorites] = useState([]);
 
   const toggleFavorite = (id) => {
@@ -26,7 +27,8 @@ const App = () => {
     );
   };
 
-  const hideFooterPaths = ["/mypage", "/community", "/community-detail", "/map"];
+  // Footer 숨길 경로 추가
+  const hideFooterPaths = ["/", "/mypage", "/community", "/community-detail", "/map"];
   const shouldHideFooter = hideFooterPaths.some((path) => location.pathname.startsWith(path));
 
   return (
@@ -39,20 +41,19 @@ const App = () => {
             path="/map"
             element={<MapLayout favorites={favorites} toggleFavorite={toggleFavorite} />}
           />
-          <Route
-            path="/mypage"
-            element={<MyPage favorites={favorites} />}
-          />
+          <Route path="/mypage" element={<MyPage favorites={favorites} />} />
           <Route path="/community" element={<CommunityMain />} />
           <Route path="/community-detail/:saleNumber" element={<CommunityDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </main>
+      {/* Main 화면 및 특정 경로에서 Footer 숨기기 */}
       {!shouldHideFooter && <Footer />}
     </div>
   );
 };
+
 const Content = styled.div`
   flex-grow: 1;
   width: 100%;
@@ -61,6 +62,5 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
 
 export default App;

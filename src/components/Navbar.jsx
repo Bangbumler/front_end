@@ -57,10 +57,15 @@ const NavItem = styled(NavLink)`
 const LogoImage = styled.img`
   height: 40px; 
   width: auto;
+  cursor: pointer; /* 클릭 가능하도록 커서 스타일 추가 */
 `;
 
 function Navbar() {
   const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/'); // 메인 화면으로 이동
+  };
 
   const handleSearchClick = () => {
     navigate('/map');
@@ -76,7 +81,7 @@ function Navbar() {
       </Helmet>
 
       <HeaderContent>
-          <LogoImage src={Logo} alt="방범러 로고" />
+        <LogoImage src={Logo} alt="방범러 로고" onClick={handleLogoClick} />
         <NavList>
           <NavItem to="/" end>
             Home
