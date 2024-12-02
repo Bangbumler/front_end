@@ -20,7 +20,7 @@ const MapLayout = ({ favorites, toggleFavorite }) => {
   const [filteredRooms, setFilteredRooms] = useState([]);
   const [activeFilter, setActiveFilter] = useState(null);
   const [activeInfraFilter, setActiveInfraFilter] = useState(null);
-
+  const [showInfra, setShowInfra] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,10 +46,12 @@ const MapLayout = ({ favorites, toggleFavorite }) => {
 
     switch (filterCondition) {
       case "infra":
+        setShowInfra(true);
         setActiveInfraFilter(null);
         setFilteredRooms(rooms);
         break;
       case "safety":
+        setShowInfra(false);
         setFilteredRooms(
           rooms.filter((room) => {
             const facilityDistance = parseFloat(
@@ -60,10 +62,14 @@ const MapLayout = ({ favorites, toggleFavorite }) => {
         );
         break;
       case "favorites":
+        setShowInfra(false);
+
         setFilteredRooms(rooms.filter((room) => favorites.includes(room.saleNumber)));
         break;
       default:
-        setFilteredRooms(rooms);
+        setShowInfra(false);
+
+      setFilteredRooms(rooms);
     }
   };
 
@@ -88,6 +94,7 @@ const MapLayout = ({ favorites, toggleFavorite }) => {
         rooms={filteredRooms}
         favorites={favorites}
         onToggleFavorite={toggleFavorite}
+        showInfra={showInfra}
       />
       <MapContainer>
         <FindHousePage rooms={filteredRooms} />

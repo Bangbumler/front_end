@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import RoomModal from "./RoomModal";
 import hambuttonIcon from "../../assets/icons/hambutton.png";
-const ListContainer = styled.div`
-width: ${(props) => (props.isHidden ? "0" : "28%")};
-overflow-y: auto;
-border-right: ${(props) => (props.isHidden ? "none" : "1px solid #ddd")};
-display: ${(props) => (props.isHidden ? "none" : "flex")};
-flex-direction: column;
-background-color: #ffffff;
-padding: ${(props) => (props.isHidden ? "0" : "16px")};
-transition: all 0.3s ease;
-position: relative;
 
+const ListContainer = styled.div`
+  width: ${(props) => (props.isHidden ? "0" : "28%")};
+  overflow-y: auto;
+  border-right: ${(props) => (props.isHidden ? "none" : "1px solid #ddd")};
+  display: ${(props) => (props.isHidden ? "none" : "flex")};
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: ${(props) => (props.isHidden ? "0" : "16px")};
+  transition: all 0.3s ease;
+  position: relative;
 `;
 
 const HeaderContainer = styled.div`
@@ -44,34 +44,15 @@ const HeaderButton = styled.button`
   }
 `;
 
-const HamburgerMenu = styled.div`
-  width: 24px;
-  height: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative; /* 항상 화면에 고정 */
-  top: 105px;
-  // left: ${(props) => (props.isHidden ? "10px" : "270px")}; /* 숨김 상태에 따라 위치 변경 */
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 1000;
-
-  span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-  }
-`;
 const HamburgerWrapper = styled.div`
   position: absolute;
-  top: 105px;
+  top: 80px;
   left: ${(props) => (props.isHidden ? "10px" : "25%")};
   z-index: 100;
   cursor: pointer;
   transition: all 0.3s ease;
 `;
+
 const HamburgerImage = styled.img`
   width: 36px;
   height: 36px;
@@ -136,44 +117,36 @@ const RoomName = styled.div`
   margin-bottom: 4px;
 `;
 
-const RoomCategory = styled.div`
-  font-size: 14px;
-  color: black;
-  margin-bottom: 10px;
-`;
-
 const RoomDetails = styled.div`
   font-size: 14px;
   color: black;
+  margin-bottom: 5px;
 `;
 
-const RoomList = ({ rooms,favorites, onToggleFavorite }) => {
-  const [selectedRoom, setSelectedRoom] = useState(null); 
-  const [isModalOpen, setModalOpen] = useState(false); // Modal 열림 여부
+const RoomList = ({ rooms, favorites, onToggleFavorite, showInfra }) => {
+  const [selectedRoom, setSelectedRoom] = useState(null);
+  const [isModalOpen, setModalOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
 
-  const toggleHidden = () =>{
+  const toggleHidden = () => {
     setIsHidden(!isHidden);
-  }
+  };
+
   const openModal = (room) => {
-    setSelectedRoom(room); // 클릭된 방 데이터를 설정
-    setModalOpen(true); // Modal 열기
+    setSelectedRoom(room);
+    setModalOpen(true);
   };
 
   const closeModal = () => {
-    setModalOpen(false); // Modal 닫기
-    setSelectedRoom(null); // 선택된 방 데이터 초기화
+    setModalOpen(false);
+    setSelectedRoom(null);
   };
 
   return (
     <>
-    
-    <HamburgerWrapper isHidden={isHidden} onClick={toggleHidden}>
-      <HamburgerImage
-        src={hambuttonIcon}
-         onClick={toggleHidden}
-      />
-    </HamburgerWrapper>
+      <HamburgerWrapper isHidden={isHidden} onClick={toggleHidden}>
+        <HamburgerImage src={hambuttonIcon} />
+      </HamburgerWrapper>
       <ListContainer isHidden={isHidden}>
         <HeaderContainer>
           <ButtonGroup>
@@ -185,9 +158,9 @@ const RoomList = ({ rooms,favorites, onToggleFavorite }) => {
           <ListItemContainer key={room.saleNumber} onClick={() => openModal(room)}>
             <ListImage src={`/assets/${room.photo}`} alt={room.name || room.type} />
             <FavoriteButton
-              filled={favorites.includes(room.saleNumber)} // 배열로 체크
+              filled={favorites.includes(room.saleNumber)}
               onClick={(e) => {
-                e.stopPropagation(); // Modal 열림 방지
+                e.stopPropagation();
                 onToggleFavorite(room.saleNumber);
               }}
             >
@@ -195,18 +168,24 @@ const RoomList = ({ rooms,favorites, onToggleFavorite }) => {
             </FavoriteButton>
             <RoomTextContainer>
               <RoomName>{room.price}</RoomName>
-              <RoomCategory>{room.type} </RoomCategory>
-              <RoomDetails>{room.description}</RoomDetails>
-              <RoomDetails>층수: {room.floor}</RoomDetails>
-              <RoomDetails>면적: {room.exclusiveArea}</RoomDetails>
-              <RoomDetails>관리비: {room.maintenanceCost}</RoomDetails>
+              {showInfra ? (
+                <>
+                  <RoomDetails>🚇지하철: {room.infrastructure.subway}</RoomDetails>
+                  <RoomDetails>🧭편의점: {room.infrastructure.convenienceStore}</RoomDetails>
+                  <RoomDetails>🚨병원: {room.infrastructure.hospital}</RoomDetails>
+                </>
+              ) : (
+                <>
+                  <RoomDetails>층수: {room.floor}</RoomDetails>
+                  <RoomDetails>면적: {room.exclusiveArea}</RoomDetails>
+                  <RoomDetails>관리비: {room.maintenanceCost}</RoomDetails>
+                </>
+              )}
             </RoomTextContainer>
           </ListItemContainer>
         ))}
       </ListContainer>
-      {selectedRoom && (
-        <RoomModal isOpen={isModalOpen} onClose={closeModal} room={selectedRoom} />
-      )}
+      {selectedRoom && <RoomModal isOpen={isModalOpen} onClose={closeModal} room={selectedRoom} />}
     </>
   );
 };
