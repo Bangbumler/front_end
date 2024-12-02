@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 
 const Header = styled.div`
   width: 100%;
-  height: 50px;
+  height: 60px;
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -15,8 +15,8 @@ const Header = styled.div`
   background-color: #FFF;
   color: var(--main, #5B59FC);
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 700;
 `;
 
 const HeaderContent = styled.div`
@@ -45,7 +45,7 @@ const NavItem = styled(NavLink)`
       content: '';
       display: block;
       width: 100%;
-      height: 2px; 
+      height: 3px; 
       background-color: currentColor; 
       position: absolute;
       bottom: -5px;
@@ -76,9 +76,7 @@ function Navbar() {
       </Helmet>
 
       <HeaderContent>
-        <NavItem to="/">
           <LogoImage src={Logo} alt="방범러 로고" />
-        </NavItem>
         <NavList>
           <NavItem to="/" end>
             Home
