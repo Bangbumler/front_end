@@ -1,8 +1,9 @@
-import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import Logo from '../assets/images/Logo.png';
-import { Helmet } from 'react-helmet';
+import React, { useState } from "react";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import styled from "styled-components";
+import Logo from "../assets/images/Logo.png";
+import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 const Header = styled.div`
   width: 100%;
@@ -53,6 +54,27 @@ const NavItem = styled(NavLink)`
     }
   }
 `;
+const LogoutButton = styled.button`
+  background-color: #8271ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #6E5FD9; 
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  }
+`;
 
 const LogoImage = styled.img`
   height: 40px; 
@@ -61,9 +83,27 @@ const LogoImage = styled.img`
 
 function Navbar() {
   const navigate = useNavigate();
+  const [logined, setLogined] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const email = sessionStorage.getItem('userID');
+    if (email) {
+      setLogined(true);
+    }
+    else {
+        setLogined(false);
+    }
+}, [location]);
+const handleLogout = () => {
+  sessionStorage.removeItem("userID"); 
+  setLogined(false); 
+  navigate("/"); 
+};
+
 
   const handleSearchClick = () => {
-    navigate('/map');
+    navigate("/map");
   };
 
   return (
@@ -76,7 +116,7 @@ function Navbar() {
       </Helmet>
 
       <HeaderContent>
-          <LogoImage src={Logo} alt="방범러 로고" />
+        <LogoImage src={Logo} alt="방범러 로고" />
         <NavList>
           <NavItem to="/" end>
             Home
@@ -91,7 +131,15 @@ function Navbar() {
             MyPage
           </NavItem>
         </NavList>
-        <NavItem to="/login">로그인/회원가입</NavItem>
+        {logined ? (
+          <LogoutButton onClick={handleLogout}>
+            로그아웃
+          </LogoutButton>
+        ) : (
+          <NavItem to="/login">
+            로그인/회원가입
+          </NavItem>
+        )}
       </HeaderContent>
     </Header>
   );
