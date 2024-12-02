@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; 
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -12,7 +12,7 @@ const Login = () => {
         <input
           style={styles.input}
           type="password"
-          placeholder="0000000000"
+          placeholder="00000"
         />
         <button style={styles.button}>로그인하기</button>
         <p
@@ -21,7 +21,6 @@ const Login = () => {
         >
           *서비스가 처음이라면, 회원가입을 해주세요.
         </p>
-        <button style={styles.googleButton}>구글로 로그인하기</button>
       </div>
     </div>
   );
@@ -34,37 +33,47 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    background: "linear-gradient(180deg, #8874FF 0%, #F7C3FF 100%)",
+    background: "linear-gradient(to Bottom, #afafff 0%, #c7c7fa 100%)",
+    border: "4px solid #efddff",
   },
   loginBox: {
     width: "100%",
-    maxWidth: "700px", // 카드 크기 키움
+    height:"30%",
+    maxWidth: "700px",
     backgroundColor: "#FFFFFF",
-    padding: "50px", // 패딩 조정
-    borderRadius: "12px", // 둥근 모서리
-    boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)", // 그림자 더 강조
+    padding: "50px",
+    borderRadius: "30px",
+    boxShadow: "0 8px 12px rgba(0, 0, 0, 0.1)",
     textAlign: "center",
+    border: "9px solid #efddff",
+    fontFamily: "MapleL," 
   },
   title: {
-    fontSize: "28px",
+    fontSize: "32px",
     marginBottom: "20px",
+    fontFamily: "Maple", // Bold 폰트 적용
   },
   input: {
-    width: "100%",
+    width: "95%",
     padding: "12px",
     margin: "10px 0",
-    borderRadius: "6px",
-    border: "1px solid #DDD",
+    borderRadius: "10px",
+    border: "2px solid #DDD",
+    fontFamily: "MapleL",
+    fontSize: "17px",
   },
   button: {
     width: "100%",
     padding: "12px",
-    backgroundColor: "#6A5ACD",
+    backgroundColor: "#f6d4ff",
     color: "#FFFFFF",
-    borderRadius: "6px",
+    borderRadius: "15px",
     border: "none",
     marginTop: "10px",
-    fontSize: "16px",
+    marginBottom:"20px",
+    fontSize: "18px",
+    fontFamily: "Maple",
+    border: "2px solid #efddff",
   },
   linkText: {
     fontSize: "14px",
@@ -72,17 +81,22 @@ const styles = {
     textDecoration: "underline",
     cursor: "pointer", // 클릭 가능하도록 설정
     marginTop: "10px",
-  },
-  googleButton: {
-    width: "100%",
-    padding: "12px",
-    backgroundColor: "#FFFFFF",
-    color: "#555",
-    border: "1px solid #DDD",
-    borderRadius: "6px",
-    marginTop: "10px",
-    fontSize: "14px",
+    fontFamily: "MapleL",
   },
 };
+
+// 전역 폰트 설정
+const fontStyle = document.createElement("style");
+fontStyle.innerHTML = `
+  @font-face {
+    font-family: 'Maple';
+    src: url('../../fonts/Maplestory Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'MapleL';
+    src: url('../../fonts/Maplestory Light.ttf') format('truetype');
+  }
+`;
+document.head.appendChild(fontStyle);
 
 export default Login;
