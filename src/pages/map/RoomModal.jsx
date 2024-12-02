@@ -11,6 +11,12 @@ import WashingMachineIcon from "../../assets/icons/세탁기.png";
 import SinkIcon from "../../assets/icons/싱크대.png";
 import FireIcon from "../../assets/icons/인덕션.png";
 import AirIcon from "../../assets/icons/에어컨.png";
+import RobberIcon from "../../assets/icons/robber.png";
+import AssaultIcon from "../../assets/icons/assault.png";
+import MurderIcon from "../../assets/icons/murder.png";
+import ThiefIcon from "../../assets/icons/thief.png";
+import SexualViolenceIcon from "../../assets/icons/sexual-violence.png";
+
 
 // 전역 폰트 정의
 const GlobalStyle = createGlobalStyle`
@@ -161,6 +167,46 @@ const RoomModal = ({ isOpen, onClose, room }) => {
     }
   };
 
+  const getSafetyValue = (safety) => {
+    const style = {
+      color: '',
+      fontFamily: 'MapleL',
+    };
+    switch (safety) {
+      case "안전":
+        style.color = "green";
+        break;
+      case "주의":
+        style.color = "orange";
+        break;
+      case "위험":
+        style.color = "red";
+        break;
+      default:
+        return safety;
+    }
+  
+    return <span style={style}>{safety}</span>;
+  };
+
+  const getSafetyKey = (key) => {
+    switch (key) {
+      case "성폭력":
+        return SexualViolenceIcon;
+      case "강도":
+        return RobberIcon;
+      case "살인":
+        return MurderIcon;
+      case "폭행":
+        return AssaultIcon;
+      case "절도":
+        return ThiefIcon;
+      default:
+        return null;
+    }
+  };
+  
+
   return (
     <>
       <GlobalStyle /> {/* 전역 스타일 적용 */}
@@ -182,6 +228,8 @@ const RoomModal = ({ isOpen, onClose, room }) => {
             marginRight: "-50%",
             transform: "translate(-50%, -50%)",
             width: "550px",
+            maxHeight: "75vh",
+            overflow: "auto",
             padding: "20px",
             borderRadius: "25px",
             border: "5px solid #efddff",
@@ -233,6 +281,14 @@ const RoomModal = ({ isOpen, onClose, room }) => {
               <Detail>
                 <span>입주 가능일</span> {room.movingIn}
               </Detail>
+            </DetailsGrid>
+            <Line></Line>
+            <DetailsGrid>
+            {Object.entries(room.safety).map(([key, value]) => (
+                <Detail key={key}>
+                  <img src={getSafetyKey(key)} alt={key} /><span>{key}</span> {getSafetyValue(value)}
+                </Detail>
+              ))}
             </DetailsGrid>
             <Line></Line>
             <Thirdtitle>
