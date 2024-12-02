@@ -1,8 +1,8 @@
-import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import Logo from '../assets/images/Logo.png';
-import { Helmet } from 'react-helmet';
+import React, { useState, useEffect } from "react";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import styled from "styled-components";
+import Logo from "../assets/images/Logo.png";
+import { Helmet } from "react-helmet";
 
 const Header = styled.div`
   width: 100%;
@@ -54,6 +54,28 @@ const NavItem = styled(NavLink)`
   }
 `;
 
+const LogoutButton = styled.button`
+  background-color: #8271ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #6E5FD9; 
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  }
+`;
+
 const LogoImage = styled.img`
   height: 40px; 
   width: auto;
@@ -62,13 +84,22 @@ const LogoImage = styled.img`
 
 function Navbar() {
   const navigate = useNavigate();
+  const [logined, setLogined] = useState(false);
+  const location = useLocation();
 
-  const handleLogoClick = () => {
-    navigate('/'); // 메인 화면으로 이동
+  useEffect(() => {
+    const email = sessionStorage.getItem("userID");
+    setLogined(!!email); // 이메일이 있으면 true, 없으면 false
+  }, [location]);
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("userID"); 
+    setLogined(false); 
+    navigate("/"); 
   };
 
-  const handleSearchClick = () => {
-    navigate('/map');
+  const handleLogoClick = () => {
+    navigate("/"); // 메인 화면으로 이동
   };
 
   return (
@@ -86,7 +117,7 @@ function Navbar() {
           <NavItem to="/" end>
             Home
           </NavItem>
-          <NavItem to="/map" onClick={handleSearchClick}>
+          <NavItem to="/map">
             Search
           </NavItem>
           <NavItem to="/community">
@@ -96,7 +127,11 @@ function Navbar() {
             MyPage
           </NavItem>
         </NavList>
-        <NavItem to="/login">로그인/회원가입</NavItem>
+        {logined ? (
+          <LogoutButton onClick={handleLogout}>로그아웃</LogoutButton>
+        ) : (
+          <NavItem to="/login">로그인/회원가입</NavItem>
+        )}
       </HeaderContent>
     </Header>
   );

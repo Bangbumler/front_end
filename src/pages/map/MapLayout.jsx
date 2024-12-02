@@ -3,6 +3,7 @@ import styled from "styled-components";
 import FindHousePage from "./FindHousePage";
 import RoomList from "./RoomList";
 import MapButtons from "./MapButtons";
+import Legend from "./Legend";
 
 const Layout = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const Layout = styled.div`
 
 const MapContainer = styled.div`
   flex: 1;
-  position: relative;
+  position: relative; /* Legend가 MapContainer를 기준으로 배치 */
 `;
 
 const MapLayout = ({ favorites, toggleFavorite }) => {
@@ -21,6 +22,7 @@ const MapLayout = ({ favorites, toggleFavorite }) => {
   const [activeFilter, setActiveFilter] = useState(null);
   const [activeInfraFilter, setActiveInfraFilter] = useState(null);
   const [showInfra, setShowInfra] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -63,13 +65,11 @@ const MapLayout = ({ favorites, toggleFavorite }) => {
         break;
       case "favorites":
         setShowInfra(false);
-
         setFilteredRooms(rooms.filter((room) => favorites.includes(room.saleNumber)));
         break;
       default:
         setShowInfra(false);
-
-      setFilteredRooms(rooms);
+        setFilteredRooms(rooms);
     }
   };
 
@@ -98,6 +98,7 @@ const MapLayout = ({ favorites, toggleFavorite }) => {
       />
       <MapContainer>
         <FindHousePage rooms={filteredRooms} />
+        <Legend /> {/* 우측 상단에 배치 */}
         <MapButtons
           onFilterChange={handleFilterChange}
           onInfraFilterChange={handleInfraFilterChange}
