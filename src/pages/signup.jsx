@@ -57,8 +57,19 @@ const Signup = () => {
   // 회원가입 처리
   const handleSignup = () => {
     if (validateForm()) {
-      console.log("회원가입 성공:", { email, password });
-      navigate("/login");
+      // 로컬 스토리지에서 기존 사용자 목록 가져오기
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const userExists = users.some((user) => user.email === email);
+
+      if (userExists) {
+        alert("이미 존재하는 이메일입니다.");
+      } else {
+        // 새 사용자 추가
+        users.push({ email, password });
+        localStorage.setItem("users", JSON.stringify(users));
+        alert("회원가입 성공! 로그인 페이지로 이동합니다.");
+        navigate("/login");
+      }
     }
   };
 
@@ -139,8 +150,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     background: "linear-gradient(to Bottom, #afafff 0%, #c7c7fa 100%)",
-    border: "4px solid #efddff",
-    fontFamily: "'MapleL', sans-serif", // 기본 폰트 설정
+    fontFamily: "'MapleL', sans-serif",
   },
   signupBox: {
     width: "100%",
@@ -150,13 +160,12 @@ const styles = {
     borderRadius: "30px",
     boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)",
     textAlign: "center",
-    border: "9px solid #efddff",
     fontFamily: "MapleL",
-    },
+  },
   title: {
     fontSize: "32px",
     marginBottom: "20px",
-    fontFamily: "'Maple', sans-serif", // Bold 폰트 적용
+    fontFamily: "'Maple', sans-serif",
   },
   inputGroup: {
     marginBottom: "20px",
@@ -178,7 +187,7 @@ const styles = {
   agreementText: {
     fontSize: "14px",
     marginLeft: "10px",
-    fontFamily: "'MapleL', sans-serif", // Light 폰트 적용
+    fontFamily: "'MapleL', sans-serif",
   },
   button: {
     width: "100%",
@@ -198,7 +207,7 @@ const styles = {
     textDecoration: "underline",
     cursor: "pointer",
     marginTop: "10px",
-    fontFamily: "'MapleL', sans-serif", // Light 폰트 적용
+    fontFamily: "'MapleL', sans-serif",
   },
   error: {
     fontSize: "12px",
@@ -208,19 +217,5 @@ const styles = {
     fontFamily: "'MapleL', sans-serif",
   },
 };
-
-// 전역 폰트 설정
-const fontStyle = document.createElement("style");
-fontStyle.innerHTML = `
-  @font-face {
-    font-family: 'Maple';
-    src: url('../../fonts/Maplestory Bold.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'MapleL';
-    src: url('../../fonts/Maplestory Light.ttf') format('truetype');
-  }
-`;
-document.head.appendChild(fontStyle);
 
 export default Signup;
