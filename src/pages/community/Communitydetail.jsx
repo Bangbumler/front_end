@@ -26,7 +26,7 @@ const CommunityDetailInfo = styled.div`
   min-height: 80vh;
   border-radius: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border: 4px solid #efddff;
+  border: 9px solid #efddff;
 `;
 
 const SaleNumberSection = styled.div`
