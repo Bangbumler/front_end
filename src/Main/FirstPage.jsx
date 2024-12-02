@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom'; // useNavigate 훅 임포트
 import houseImg from '../assets/images/house.png';
 
 const PageContainer = styled.div`
@@ -83,8 +84,10 @@ const ImageSection = styled.div`
 `;
 
 const FirstPage = () => {
+    const navigate = useNavigate(); // useNavigate 훅 호출
+
     const handleLoginClick = () => {
-        console.log("button clikced");
+        navigate('/login'); // login 경로로 이동
     };
 
     return (

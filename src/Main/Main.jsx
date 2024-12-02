@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
-import ThirdPage from './ThirdPage';
+
 function Main() {
     const outerDivRef = useRef(null);
     const [currentPage, setCurrentPage] = useState(1);
