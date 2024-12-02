@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Wrapper, ProfileSection, RoomSection } from "../styles/mypagestyle";
 import ProfileImage from "../assets/images/profile.png";
 
 function MyPage({ favorites }) {
-  const rooms = [
-    { id: 1, image: "/assets/images/room1.png", title: "월세 2000/100", details: "3층, 30.3㎡, 한양 여자대학교 10분거리" },
-    { id: 2, image: "/assets/images/room2.png", title: "월세 3000/150", details: "5층, 40㎡, 성신여대 인근" },
-    { id: 3, image: "/assets/images/room3.png", title: "전세 1억", details: "2층, 50㎡, 서울숲 근처" },
-  ];
+  const [rooms, setRooms] = useState([]);
+  const [filteredRooms, setFilteredRooms] = useState([]);
+  const [email, setEmail] = useState("");
 
-  const favoriteRooms = rooms.filter((room) => favorites.includes(room.id));
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/assets/data/room.json");
+        const data = await response.json();
+        setRooms(data);
+
+        const favoriteRooms = data.filter((room) => favorites.includes(room.saleNumber));
+        setFilteredRooms(favoriteRooms);
+      } catch (error) {
+        console.error("Error fetching room data:", error);
+      }
+    };
+
+    fetchData();
+  }, [favorites]); 
+  useEffect(() => {
+    const email = sessionStorage.getItem("userID");
+    if (email) {
+      setEmail(email);
+    }
+  }, []);
 
   return (
     <Wrapper>
@@ -19,8 +38,7 @@ function MyPage({ favorites }) {
         </div>
         <div className="profile-details">
           <button>회원정보 수정 ✏️</button>
-          <p>닉네임: 코끼리</p>
-          <p>이메일: aaaaa@gmail.com</p>
+          <p>이메일: {email}</p>
           <p>관심지역: 성북구</p>
         </div>
       </ProfileSection>
@@ -29,12 +47,12 @@ function MyPage({ favorites }) {
           <div className="header-card">찜한 방</div>
         </div>
         <div className="room-list">
-          {favoriteRooms.length > 0 ? (
-            favoriteRooms.map((room) => (
-              <div key={room.id} className="room-card">
-                <img src={room.image} alt={`Room ${room.id}`} />
-                <h3>{room.title}</h3>
-                <p>{room.details}</p>
+          {filteredRooms.length > 0 ? (
+            filteredRooms.map((room) => (
+              <div key={room.saleNumber} className="room-card">
+                <img src={`/assets/${room.photo}`}/>
+                <h3>{room.lease} {room.price}</h3>
+                <p>{room.summary}</p>
               </div>
             ))
           ) : (

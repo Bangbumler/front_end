@@ -1,27 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    if (email && password) {
+      sessionStorage.setItem("userID", email);
+      navigate("/");
+    } else {
+      alert("이메일과 비밀번호를 입력해주세요.");
+    }
+  };
 
   return (
     <div style={styles.container}>
       <div style={styles.loginBox}>
         <h1 style={styles.title}>로그인</h1>
-        <input style={styles.input} type="email" placeholder="0000@naver.com" />
+        <input
+          style={styles.input}
+          type="email"
+          placeholder="0000@abcd.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <input
           style={styles.input}
           type="password"
-          placeholder="0000000000"
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <button style={styles.button}>로그인하기</button>
+        <button style={styles.button} onClick={handleLogin}>
+          로그인하기
+        </button>
         <p
           style={styles.linkText}
           onClick={() => navigate("/signup")}
         >
           *서비스가 처음이라면, 회원가입을 해주세요.
         </p>
-        <button style={styles.googleButton}>구글로 로그인하기</button>
+        <button
+          style={styles.googleButton}
+          onClick={() => alert("구글 로그인 기능은 준비 중입니다.")}
+        >
+          구글로 로그인하기
+        </button>
       </div>
     </div>
   );
@@ -38,11 +64,11 @@ const styles = {
   },
   loginBox: {
     width: "100%",
-    maxWidth: "700px", // 카드 크기 키움
+    maxWidth: "700px",
     backgroundColor: "#FFFFFF",
-    padding: "50px", // 패딩 조정
-    borderRadius: "12px", // 둥근 모서리
-    boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)", // 그림자 더 강조
+    padding: "50px",
+    borderRadius: "12px",
+    boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)",
     textAlign: "center",
   },
   title: {
@@ -70,7 +96,7 @@ const styles = {
     fontSize: "14px",
     color: "#6A5ACD",
     textDecoration: "underline",
-    cursor: "pointer", // 클릭 가능하도록 설정
+    cursor: "pointer",
     marginTop: "10px",
   },
   googleButton: {

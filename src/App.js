@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/home";
 import MyPage from "./pages/mypage";
 import MapLayout from "./pages/map/MapLayout";
 import CommunityMain from "./pages/community/CommunityMain";
