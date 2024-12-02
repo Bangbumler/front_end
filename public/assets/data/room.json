@@ -496,44 +496,6 @@
     {
         "saleNumber": "0000014",
         "coordinate": {
-            "latitude": 37.597134671486145,
-            "longitude": 127.01445746597149
-        },
-        "photo": "/images/rooms/14-1.jpg",
-        "lease": "월세",
-        "price": "1000/72",
-        "description": "Winner.뉴리모델링, 신축급, 창문2개, 남향",
-        "type": "원룸",
-        "exclusiveArea": "28m²",
-        "floor": "3층/5층",
-        "maintenanceCost": "10만원",
-        "parkingAvailable": "불가능",
-        "allArea": "28m²",
-        "roomCount": "1개 / 1개",
-        "direstion": "남",
-        "heat": "개별난방",
-        "totalParking": "-",
-        "movingIn": "즉시 입주",
-        "option": ["신발장", "냉장고", "세탁기", "에어컨", "싱크대", "인덕션"],
-        "infrastructure": {
-            "subway": "600m",
-            "convenienceStore": "70m",
-            "hospital": "800m",
-            "publicSecurityFacility": "1.5km"
-        },
-        "reviews": ["집주인 별로"],
-        "safety": {
-            "성폭력": "안전",
-            "강도": "안전",
-            "살인": "안전",
-            "폭행": "주의",
-            "절도": "안전"
-        },
-        "cctv": 12
-    },
-    {
-        "saleNumber": "0000014",
-        "coordinate": {
             "latitude": 37.59670914741391,
             "longitude": 127.01277300078875
         },
