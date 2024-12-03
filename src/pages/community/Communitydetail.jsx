@@ -252,11 +252,11 @@ const CommunityDetail = () => {
                 </div>
                 <div className="info-item">
                   <img src={AreaIcon} alt="면적" />
-                  <span>{room.exclusiveArea}㎡</span>
+                  <span>{room.exclusiveArea}</span>
                 </div>
                 <div className="info-item">
                   <img src={RecipeIcon} alt="관리비" />
-                  <span>{room.maintenanceCost}원</span>
+                  <span>{room.maintenanceCost}</span>
                 </div>
               </div>
             </InfoSection>
