@@ -42,16 +42,16 @@ const ModalContent = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
-  height: 210px;
+  height: 250px;
   border-radius: 8px;
   overflow: hidden;
 `;
 
 const RoomImage = styled.img`
-  width: 50%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 15px;
 `;
 
 const RoomInfo = styled.div`
