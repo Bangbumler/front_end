@@ -1,128 +1,157 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 import HouseIcon from "../../assets/icons/house.png";
 import FloorIcon from "../../assets/icons/floor.png";
 import AreaIcon from "../../assets/icons/area.png";
 import RecipeIcon from "../../assets/icons/recipe.png";
-import ReviewIcon from "../../assets/icons/review.png";
+
+// 글로벌 스타일 정의
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Maple';
+    src: url('../../fonts/Maplestory Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'MapleL';
+    src: url('../../fonts/Maplestory Light.ttf') format('truetype');
+  }
+  body {
+    font-family: 'MapleL';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+`;
 
 const PageContainer = styled.div`
   background: linear-gradient(180deg, #afafff 0%, #c7c7fa 100%);
-  min-height: 1000px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 50px 20px 50px 20px;
   border: 4px solid #efddff;
 `;
 
 const CommunityDetailInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: white;
   padding: 30px;
-  margin: auto;
-  width: 100%;
+  margin: 70px;
+  width: 70%;
+  height: 700px;
   max-width: 1400px;
-  min-height: 80vh;
-  border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border: 9px solid #efddff;
-`;
-
-const SaleNumberSection = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`;
-
-const SaleNumber = styled.div`
-  font-size: 13px;
-  font-weight: bold;
-  color: #000;
-  background-color: #f5f5f5;
-  border: 1px solid #656565;
   border-radius: 30px;
-  padding: 3px 100px;
-  text-align: center;
-  display: inline-block;
+  border: 9px solid #efddff;
+  gap: 20px;
 `;
 
-const RoomImageSection = styled.div`
-  text-align: center;
-  margin: 20px 0 30px 0;
-`;
-
-const RoomImage = styled.img`
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 5px;
-`;
-
-const DetailInfoSection = styled.div`
+const LeftSection = styled.div`
+  flex: 2.5;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 50px;
-  margin: 30px auto;
-  width: 100%;
-  max-width: 800px;
-  padding: 10px;
-  box-sizing: border-box;
 `;
 
-const DetailInfoLeft = styled.div`
-  flex: 1 1 45%;
-  max-width: 45%;
-  text-align: left;
+const ImageSection = styled.div`
+  text-align: center;
 
-  .price {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  img {
+    width: 100%;
+    max-width: 650px;
+    height: 350px;
+    border-radius: 10px;
+  }
+`;
+
+const InfoSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 30px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .price {
+      font-family: 'Maple';
+      font-size: 30px;
+    }
+
+    .sale-number {
+      font-size: 16px;
+      font-weight: bold;
+      color: #555;
+      background-color: #f5f5f5;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin-right:40px;
+    }
   }
 
   .description {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
     color: #555;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .info-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img {
+      width: 40px;
+      height: 35px;
+    }
+
+    span {
+      font-size: 14px;
+    }
   }
 `;
 
-const DetailInfoRight = styled.div`
-  flex: 1 1 45%;
-  max-width: 45%;
-  text-align: left;
-`;
-
-const InfoItemContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 20px;
-`;
-
-const InfoItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: flex-start;
-
-  img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-  }
-`;
-
-const ReviewsContainer = styled.div`
-  min-height: 500px;
+const RightSection = styled.div`
+  flex: 2;
   background-color: #d5e2ff;
   border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  h3 {
+    font-family: 'Maple', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+`;
+
+const ReviewsSection = styled.div`
+  flex: 1;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
 `;
 
 const AddReview = styled.div`
@@ -135,6 +164,7 @@ const AddReview = styled.div`
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-family: 'MapleL', sans-serif;
   }
 
   button {
@@ -151,67 +181,12 @@ const AddReview = styled.div`
   }
 `;
 
-const Divider = styled.hr`
-  border: none;
-  border-top: 3px solid #9392ff;
-  margin: 10px 0;
-`;
-
-const ReviewsList = styled.ul`
-  list-style: none;
-  padding: 0 50px;
-  margin: 0;
-  font-size: 17px;
-
-  li {
-    margin-bottom: 8px;
-    word-wrap: break-word;
-    overflow-wrap: anywhere;
-    background-color: white;
-    padding: 5px;
-
-    &:empty {
-      background-color: transparent;
-    }
-  }
-`;
-
-const Pagination = styled.div`
-  text-align: center;
-  font-size: 16px;
-  margin-top: auto;
-  color: #000;
-
-  .page-link {
-    cursor: pointer;
-    margin: 0 5px;
-    text-decoration: none;
-
-    &.disabled {
-      color: #ccc;
-      cursor: not-allowed;
-    }
-
-    &.active {
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    &:hover:not(.disabled) {
-      color: #7371ef;
-    }
-  }
-`;
-
 const CommunityDetail = () => {
-  const { saleNumber } = useParams(); // URL 파라미터로부터 saleNumber 가져오기
-  const [room, setRoom] = useState(null); // 현재 방 데이터 가져오기
-  const [reviews, setReviews] = useState([]); // 후기 데이터
-  const [newReview, setNewReview] = useState(""); // 새로운 후기 입력 값
-  const [loading, setLoading] = useState(true); // 로딩 상태
-  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
-
-  const reviewsPerPage = 8; // 페이지당 후기 개수
+  const { saleNumber } = useParams();
+  const [room, setRoom] = useState(null);
+  const [reviews, setReviews] = useState([]);
+  const [newReview, setNewReview] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRoomData = async () => {
@@ -224,7 +199,7 @@ const CommunityDetail = () => {
 
         if (selectedRoom) {
           setRoom(selectedRoom);
-          setReviews(selectedRoom.reviews.reverse() || []);
+          setReviews(selectedRoom.reviews || []);
         } else {
           console.error("Room not found for saleNumber:", saleNumber);
         }
@@ -239,102 +214,78 @@ const CommunityDetail = () => {
   }, [saleNumber]);
 
   const handleAddReview = () => {
-    if (newReview.trim() === "") return; // 공백 입력 방지
-    const updatedReviews = [newReview, ...reviews];
-    setReviews(updatedReviews);
+    if (!newReview.trim()) return;
+    setReviews([newReview, ...reviews]);
     setNewReview("");
-    setCurrentPage(1);
   };
-
-  // 현재 페이지에 표시할 후기
-  const totalPages = Math.ceil(reviews.length / reviewsPerPage);
-  const indexOfLastReview = currentPage * reviewsPerPage;
-  const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
-  const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
-
-  const handlePageChange = (pageNumber) => { setCurrentPage(pageNumber); };
-  const handlePreviousPage = () => { if (currentPage > 1) setCurrentPage((prevPage) => prevPage - 1); };
-  const handleNextPage = () => { if (currentPage < totalPages) setCurrentPage((prevPage) => prevPage + 1); };
 
   if (loading) return <div>방 정보를 불러오는 중입니다...</div>;
   if (!room) return <div>해당 방 정보를 찾을 수 없습니다.</div>;
 
   return (
-    <PageContainer>
-      <CommunityDetailInfo>
-        {/* 매물번호 */}
-        <SaleNumberSection>
-          <SaleNumber>매물번호: {room.saleNumber}</SaleNumber>
-        </SaleNumberSection>
-        
-        {/* 방 이미지 */}
-        <RoomImageSection>
-          {room.photo ? (
-            <RoomImage src={`/assets/${room.photo}`} alt="방 이미지" className="room-image" />
-          ) : (
-            <p>이미지가 없습니다</p>
-          )}
-        </RoomImageSection>
+    <>
+      <GlobalStyle />
+      <PageContainer>
+        <CommunityDetailInfo>
+          <LeftSection>
+            <ImageSection>
+              {room.photo ? (
+                <img src={`/assets/${room.photo}`} alt="방 이미지" />
+              ) : (
+                <p>이미지가 없습니다</p>
+              )}
+            </ImageSection>
+            <InfoSection>
+              <div className="header">
+                <div className="price">{room.lease} {room.price}</div>
+                <div className="sale-number">매물번호: {room.saleNumber}</div>
+              </div>
+              <p className="description">{room.description}</p>
+              <div className="info-list">
+                <div className="info-item">
+                  <img src={HouseIcon} alt="방 종류" />
+                  <span>{room.type}</span>
+                </div>
+                <div className="info-item">
+                  <img src={FloorIcon} alt="층수" />
+                  <span>{room.floor}</span>
+                </div>
+                <div className="info-item">
+                  <img src={AreaIcon} alt="면적" />
+                  <span>{room.exclusiveArea}㎡</span>
+                </div>
+                <div className="info-item">
+                  <img src={RecipeIcon} alt="관리비" />
+                  <span>{room.maintenanceCost}원</span>
+                </div>
+              </div>
+            </InfoSection>
+          </LeftSection>
 
-        {/* 방 정보 */}
-        <DetailInfoSection>
-          <DetailInfoLeft>
-            <span className="price">{room.lease} {room.price}</span>
-            <p className="description">{room.description}</p>
-          </DetailInfoLeft>
-          <DetailInfoRight>
-            <InfoItemContainer>
-              <InfoItem>
-                <img src={HouseIcon} alt="방종류"/>
-                <span>{room.type}</span>
-              </InfoItem>
-              <InfoItem>
-                <img src={RecipeIcon} alt="관리비"/>
-                <span>{room.exclusiveArea}</span>
-              </InfoItem>
-              <InfoItem>
-                <img src={FloorIcon} alt="층수"/>
-                <span>{room.floor}</span>
-              </InfoItem>
-              <InfoItem>
-                <img src={AreaIcon} alt="면적"/>
-                <span>{room.maintenanceCost}</span>
-              </InfoItem>
-            </InfoItemContainer>
-          </DetailInfoRight>
-        </DetailInfoSection>
-
-        {/* 후기 */}
-        <ReviewsContainer>
-          <AddReview>
-            <InfoItem>
-              <img src={ReviewIcon} alt="리뷰"/>
-            </InfoItem>
-            <input type="text" value={newReview} onChange={(e) => setNewReview(e.target.value)} placeholder="후기 추가..."/>
-            <button onClick={handleAddReview}>등록</button>
-          </AddReview>
-
-          <Divider/>
-
-          <div className="reviews">
-            <ReviewsList>
-              {Array.from({ length: reviewsPerPage }).map((_, index) => (
-                <li key={index}>{currentReviews[index] || ""}</li>
-              ))}
-            </ReviewsList>
-          </div>
-
-          {/* 페이지네이션 */}
-          <Pagination>
-            <span className={`page-link ${currentPage === 1 ? "disabled" : ""}`} onClick={handlePreviousPage}>{"< "}</span>
-            {Array.from({ length: totalPages || 1 }, (_, i) => (
-              <span key={i + 1} className={`page-link ${currentPage === i + 1 ? "active" : ""}`} onClick={() => handlePageChange(i + 1)}>{i + 1}{" "}</span>
-            ))}
-            <span className={`page-link ${currentPage === totalPages || totalPages === 0 ? "disabled" : ""}`} onClick={handleNextPage}>{">"}</span>
-          </Pagination>
-        </ReviewsContainer>
-      </CommunityDetailInfo>
-    </PageContainer>
+          <RightSection>
+            <AddReview>
+              <input
+                type="text"
+                value={newReview}
+                onChange={(e) => setNewReview(e.target.value)}
+                placeholder="후기를 작성해주세요"
+              />
+              <button onClick={handleAddReview}>등록</button>
+            </AddReview>
+            <ReviewsSection>
+              <h3>후기</h3>
+              <ul>
+                {reviews.length > 0 ? (
+                  reviews.map((review, index) => <li key={index}>{review}</li>)
+                ) : (
+                  <li>작성된 후기가 없습니다.</li>
+                )}
+              </ul>
+            </ReviewsSection>
+          </RightSection>
+        </CommunityDetailInfo>
+      </PageContainer>
+    </>
   );
 };
 
